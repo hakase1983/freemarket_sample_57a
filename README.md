@@ -9,6 +9,24 @@
 |password|string|null: false|
 |image|string|-------|
 |profile|text|-------|
+
+
+### Association
+- has_many :items
+- has_many :comments
+- has_many :likes
+- has_many :sellers
+- has_many :buyers
+- has_many :bought_items, foreign_key: "buyer_id"
+- has_many :selling_items, -> {where("buyer_id is NULL") }, foreign_key: "seller_id"
+- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id"
+- has_one :personal_info
+
+
+## personal_infosテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
@@ -22,14 +40,7 @@
 |birth_day|string|--------------|
 
 ### Association
-- has_many :items
-- has_many :comments
-- has_many :likes
-- has_many :sellers
-- has_many :buyers
-- has_many :bought_items, foreign_key: "buyer_id"
-- has_many :selling_items, -> {where("buyer_id is NULL") }, foreign_key: "seller_id"
-- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id"
+- belongs_to :user
 
 
 ## itemsテーブル
