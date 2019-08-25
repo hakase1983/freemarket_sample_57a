@@ -38,7 +38,7 @@
 |building_name|string|----------|
 |telephone|string|--------------|
 |birth_day|string|--------------|
-
+|user_id|references|null: false, foreign_key :true|
 ### Association
 - belongs_to :user
 
