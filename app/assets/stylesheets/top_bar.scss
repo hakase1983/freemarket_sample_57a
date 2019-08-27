@@ -107,13 +107,11 @@
             }
             .header-nav {
               font-size: 0;
-              &__root.list-parent {
-                font-weight: 700;
-              }
               &__root {
                 position: relative;
                 height: 44px;
                 line-height: 32px;
+                font-weight: 700;
               }
             }
               .header-cat-brand-icon {
@@ -136,12 +134,21 @@
                 padding: 0 14px;
                 cursor: pointer;
               }
+              .header-user-icon {
+                position: relative;
+                display: block;
+                height: 44px;
+                line-height: 32px;
+                font-size: 0;
+                color: #333;
+              }
               .header-user-icon figure {
                 display: inline-block;
                 position: relative;
                 text-align: center;
                 vertical-align: middle;
               }
+              
               .header-user-icon figure img {
                 vertical-align: bottom;
                 overflow: hidden;
