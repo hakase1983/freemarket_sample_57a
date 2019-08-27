@@ -192,7 +192,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item_id|string||
 
 ### Association
 - belongs_to :user
@@ -204,7 +204,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item_id|string||
+
 
 ### Association
 - belongs_to :user

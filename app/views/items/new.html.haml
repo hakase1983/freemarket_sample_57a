@@ -1,0 +1,10 @@
+%main.single__main
+  %section.single__container
+    #sell__container
+      .sell__contaner-inner
+        %h2.single__head
+          商品の情報を入力
+        .sell__form
+          =form_for [@item] do |f|
+            = f.file_field :image, class: 'memoir-form__image'
+            =f.submit '追加する', class: 'memoir-form__submit'
