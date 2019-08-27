@@ -1,0 +1,149 @@
+.app-banner img{
+  position:absolute;
+}
+.app-banner {
+  height:260px;
+  position:relative;
+  &__icon.clearfix{
+    margin-top:160px;
+    margin-left:440px;
+    height:68px;
+    width:400px;
+    position:absolute;
+    list-style:none;
+  &__icon li{
+    float:left;
+  }
+}
+  &__icon li:last-child{
+    margin-left:150px;
+  } 
+
+  &__icon::after{
+    @include clearfix;
+  }
+}
+.footer a {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5em;
+}
+.footer {
+  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  font-weight: 500;
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  height:390px;
+  &__cells{
+    width: 1020px;
+    margin: 0 auto;
+  }
+  &__list:first-child {
+    padding: 0 20px 0 0;
+    width: 18%;
+  }
+  &__list{
+    display: block;
+    float: left;
+    margin-top: 18px;
+    width: 19%;
+    padding: 0 40px 0 0;
+  }
+  &__list-third{
+    float: left;
+    padding: 0 40px 0 0;
+    width: 40%;
+    margin-top: 18px;
+  }
+  &__list-last{
+    display: block;
+    float: left;
+    margin-top: 18px;
+    width: 9%;
+    padding: 0 40px 0 0;
+  }
+  &__list-inner{
+    float: left;
+    width: 47%;
+  }
+  &__list li{
+    margin:15px 0 0;
+    color: #fff;
+  }
+  &__list a {
+    display: block;
+    opacity: .7;
+    text-decoration:none;
+  }
+  &__list-inner{
+    margin:16px 0 0;
+    color: #fff;
+    padding-left: 10px;
+  }
+  &__list-inner:first-of-type{
+    padding: 0 10px 0 0;
+  }
+  &__list-inner a{
+    display: block;
+    opacity: .7;
+    text-decoration:none;
+  }
+  &__list-inner li{
+    margin:15px 0 0;
+    color: #fff;
+  }
+  &__list-last a{
+    display: block;
+    opacity: .7;
+    text-decoration:none;
+  }
+  &__list-last li{
+    margin:15px 0 0;
+    color: #fff;
+  }
+
+  &__head {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &__social-link {
+    display: inline-block;
+  }
+  &__social-link a {
+    opacity: 1;
+  }
+  &__social-link i{
+    display: inline-block;
+    background: transparent;
+
+  }
+  &__bottom {
+    display:inline-block;
+    margin: 30px 200px 20px 200px;
+    width: 1020px;
+  }
+  &__logo{
+    display: inline-block;
+    margin-right: 10px;
+    width: auto;
+  }
+  &__copyright{
+    display: inline-block;
+    text-align: center;
+    vertical-align: sub;
+    width: 745px;
+    font-size: 12px;
+  }
+}
+.icon-twitter {
+  font-size: 29px;
+  color: #fff;
+  margin: 16px 18px 0 0;
+}
+.icon-facebook {
+  font-size: 29px;
+  color: #fff;
+  margin: 16px 18px 0 0;
+}
