@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def index
+  def edit
+    @personal_info = PersonalInfo.new
   end
 end
