@@ -17,7 +17,6 @@ $(function() {
   }
     $("select").change(function(){
     var value = $('option:selected').val();
-    console.log(value)
     if (value == "") {
       initial();
     }else if (value == 'レディース' ) {
