@@ -1,6 +1,32 @@
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
+input {
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+  @include appearance;
+}
+textarea {
+  border-radius: 0;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+select {
+  outline: 0;
+  @include appearance;
+}
 .single{
   &__main{
     display: block;
+    background:$merukari-haikei;
   }
   &__container{
     width: 700px;
@@ -17,6 +43,243 @@
   }
 }
 .sell{
-  &__container-inner{
+  &__form{
+    border-top: 1px solid #eee;
   }
+  &__image-box{
+    width: 620px;
+    padding: 40px;
+  }
+  &__image-box p{
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  &__image-head{
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    font-weight:600;
+  }
+  &__image-container{
+    display: block;
+    width: 620px;
+    margin: 16px auto 0;
+  }
+  &__image-container::after{
+    @include clearfix;
+  }
+  &__image-uploadbox{
+
+  }
+  &__image-dropbox{
+    width: 100%;
+    margin-left: 0;
+    float: right;
+    padding: 40px;
+    position: relative;
+    min-height: 162px;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    font-size: 0;
+    text-align: center;
+    box-sizing:border-box;
+    cursor: pointer;
+    @include transition;
+  }
+  &__image-dropbox pre {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    right: 16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    pointer-events: none;
+
+    word-wrap: break-word;
+    @include transform;
+    font-weight:600;
+    color: rgb(51, 51, 51);
+  }
+  &__content{
+    padding: 40px;
+    border-top: 1px solid #eee;
+  }
+  &__content.clearfix::after{
+    @include clearfix;
+  }
+  &__sub-head{
+    float: left;
+    color: #888;
+    font-size: 14px;
+    font-weight:600;
+  }
+  &__form-box{
+    float: right;
+    width: 400px;
+    margin: 0;
+  }
+  &__price>li:first-child {
+    padding: 0 0 24px;
+    border: 0;
+    margin: 0;
+  }
+  &__price>li {
+    padding: 24px 0;
+    border-top: 1px solid #ccc;
+  }
+}
+.form-require{
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+.form-question {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+  font-weight:400;
+}
+.form-group:first-child{
+  margin: 0;
+}
+.form-group.clearfix::after{
+  @include clearfix;
+}
+.form-group{
+  margin: 40px 0 0;
+  .input-default{
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+    .list-left {
+      width: 50%;
+      line-height: 48px;
+      font-weight: 600;
+      float: left;
+      display: inline-block;
+    }
+  }
+  .list-right{
+    text-align: right;
+    float: right;
+    .input-default {
+      margin: 0;
+      text-align: right;
+    }
+  }
+  .list-right div{
+    display: inline-block;
+    width: 80%;
+    margin: 0 0 0 5%;
+  }
+  
+.input-default:focus {
+  border-color: #0099e8;
+}
+}
+.form-group label{
+  font-weight: 600;
+}
+.textarea-default{
+  margin: 8px 0 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: inherit;
+}
+.textarea-default:focus {
+  border-color: #0099e8;
+}
+.select-wrap{
+  margin: 8px 0 0;
+  position: relative;
+  font-weight:300;
+  background: #fff;
+}
+.icon-arrow-bottom {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 30px;
+  @include transform;
+}
+.select-default {
+  color: #333333;
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  width:400px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.select-default:focus {
+  border-color: #0099e8;
+}
+.bold{
+  font-weight: 600;
+  .list-left{
+    font-size: 16px;
+  }
+  .list-right{
+    font-size: 34px;
+  }
+}
+.sell-btn-box p {
+  line-height: 1.5;
+}
+.btn-default-red {
+  margin: 40px 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  @include transition;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-default-gray {
+  width: 45%;
+  margin: 24px auto 0;
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  display: block;
+  line-height: 48px;
+  font-size: 14px;
+  @include transition;
+  cursor: pointer;
+  text-align: center;
 }

@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   def index
   end
   def new
-    render layout: 'compact'
     @item = Item.new
+    
+    render layout: 'compact'
   end
 end
