@@ -1,11 +1,13 @@
-@import "_reset.scss";
+@import "reset.scss";
 @import "vendor_prefix.scss";
-@import "_color.scss";
+@import "color.scss";
 @import "mixin.scss";
-@import "top_bar.scss";
+@import "top-bar.scss";
 @import "top-page.scss";
-@import "bottom_bar.scss";
+@import "bottom-bar.scss";
 @import 'font-awesome-sprockets';
 @import "font-awesome";
 @import "logout_view";
 @import "l-sidebar";
+@import "user-confirmation_view";
+
