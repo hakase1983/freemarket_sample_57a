@@ -1,0 +1,42 @@
+.l-side{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  .mypage-nav{
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    &__list{
+      list-style: none;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      &__item{
+        position: relative;
+        display: block;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: rgb(245, 245, 245);
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        .icon-arrow-right{
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          color: #ccc;
+          transform: translate(0, -50%);
+        }
+      }
+      .active{
+        background: #eee;
+        font-weight: 600;
+        border-bottom-style: none;
+      }
+    }
+    .mypage-nav-head{
+      margin: 40px 0 0;
+    }
+  }
+}

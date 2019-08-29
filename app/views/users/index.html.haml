@@ -1,0 +1,27 @@
+= render 'items/top_bar'
+.defalt-container
+  %nav.bread-crums
+    %ul.bread-crums-ul
+      %li.bread-crums-list
+        = link_to 'メルカリ'
+        = icon('fas','chevron-right', class: 'icon-arrow-right')
+      %li.bread-crums-list
+        = link_to 'マイページ'
+        = icon('fas','chevron-right', class: 'icon-arrow-right')
+      %li.bread-crums-list.li-last-child
+        = link_to 'ログアウト'
+
+  .l-container.clearfix
+    .l-content
+      .l.chapter-container
+        .l-single-inner
+          .l-single-content
+            .btn-default.btn-red
+              ログアウト
+    = render 'layouts/l-sidebar'
+= render 'items/bottom_bar'
+
+= link_to root_path,class: "sell-btn" do
+  %div 出品
+  %i.icon-camera
+    = icon "fas","camera"
