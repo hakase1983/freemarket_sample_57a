@@ -83,7 +83,7 @@
           .list-left {
             float: left;
           }
-            
+
             .header-nav h2 {
               font-size: 14px;
               font-weight: 400;
@@ -148,7 +148,7 @@
                 text-align: center;
                 vertical-align: middle;
               }
-              
+
               .header-user-icon figure img {
                 vertical-align: bottom;
                 overflow: hidden;
@@ -166,7 +166,7 @@
               .header-user-nav span {
                 vertical-align: middle;
               }
-              
+
               .header-menu-link {
                 position: relative;
                 display: block;
@@ -186,25 +186,4 @@
               }
         }
   }
-}
-.sell-btn {
-  bottom: 32px;
-  right: 32px;
-  width: 160px;
-  height: 160px;
-  font-size: 22px;
-  position: fixed;
-  border-radius: 50%;
-  background: #ea352d;
-  color: #fff;
-  text-align: center;
-  z-index: 1000;
-  text-decoration:none;
-}
-.sell-btn div{
-  margin: 32px 0 0;
-}
-.icon-camera {
-  margin: 8px 0 0;
-  font-size: 64px;
-}
+} 
