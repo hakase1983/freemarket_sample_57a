@@ -43,7 +43,7 @@
       margin:0;
     }
   }
-  .active{
+  .active1{
     font-weight: 600;
     color: #ea352d;
     margin: 0 40px 0 0;
@@ -58,7 +58,7 @@
       height: 12px;
       margin: 8px auto 0;
       border-radius: 50%;
-      &::after{
+      &::before{
         left: 50%;
         position: absolute;
         bottom: 5px;
@@ -71,7 +71,7 @@
       }
     }
   }
-  .no-active{
+  .no-active1{
     font-weight: 600;
     color: #888;
     margin: 0 40px 0 0;
@@ -110,7 +110,7 @@
       }
     }
   }
-  .no-right-active{
+  .compete-page1{
     font-weight: 600;
     color: #888;
     margin: 0 40px 0 0;
@@ -125,7 +125,7 @@
       height: 12px;
       margin: 8px auto 0;
       border-radius: 50%;
-      &::before{
+      &::after{
         right: 50%;
         position: absolute;
         bottom: 5px;
