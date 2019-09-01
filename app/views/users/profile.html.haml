@@ -11,7 +11,7 @@
             = form_for @user , url: "/users/profile" do |f|
               =f.text_field :name,class:"nameplate", placeholder: "なまえ"
           .profile-comment
-            %textarea.textarea-default{name: "introduction", class:"profile-text",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",width:"100",height:"100"}
+            %textarea.textarea{name: "introduction", class:"profile-field",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",width:"90",height:"100"}
             %button.btn-red{type:  "submit"} 
               変更する
   = render 'layouts/l-sidebar'
