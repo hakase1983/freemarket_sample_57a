@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_041656) do
+ActiveRecord::Schema.define(version: 2019_08_29_015905) do
 
   create_table "personal_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.integer "postal_code", null: false
+    t.string "postal_code", null: false
     t.string "prefecture_code", null: false
     t.string "city_code", null: false
     t.string "address_num", null: false
     t.string "building_name"
-    t.string "telephone"
-    t.date "birth_day"
+    t.integer "telephone"
+    t.date "birth_day", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

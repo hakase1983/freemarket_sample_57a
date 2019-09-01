@@ -37,7 +37,7 @@
 |address_num|string|null: false|
 |building_name|string|----------|
 |telephone|string|--------------|
-|birth_day|string|--------------|
+|birth_day|date|--------------|
 |user_id|references|null: false, foreign_key :true|
 ### Association
 - belongs_to :user
@@ -192,7 +192,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item_id|string||
 
 ### Association
 - belongs_to :user
@@ -204,7 +204,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item_id|string||
+
 
 ### Association
 - belongs_to :user
