@@ -2,15 +2,15 @@
 @import "vendor_prefix.scss";
 @import "color.scss";
 @import "mixin.scss";
+@import 'font-awesome-sprockets';
+@import "font-awesome";
 @import "top-bar.scss";
 @import "top-page.scss";
 @import "bottom-bar.scss";
+@import "l-sidebar";
 @import "card-add.scss";
 @import "card-new.scss";
+@import "profile.scss";
 @import "item-new.scss";
 @import "logout_view";
-@import "l-sidebar";
 @import "user-confirmation_view";
-@import 'font-awesome-sprockets';
-@import "font-awesome";
-
