@@ -8,12 +8,14 @@ body{
   color: #333;
   line-height: 1;
 }
-.container{
+.profile-content{
+  height: 1300px;
+  background-color: rgb(245, 245, 245);
   margin: 40px auto 0;
   width: 1020px;
   padding: 0 0 40px;
 }
-.container::after{
+.content::after{
   @include clearfix;
 }
 .right{
