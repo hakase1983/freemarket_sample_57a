@@ -1,0 +1,60 @@
+.single-container
+  %header.single-container__header
+  %main.single-container__main
+    .l-single-container.buy-item-container
+      %h2.l-single-container__head
+        購入内容の確認
+      %section.buy-content.buy-item
+        .buy-content-inner
+          %h3.buy-item-image
+            = image_tag  "https://static.mercdn.net/thumb/photos/m28167667275_1.jpg?1567138930", class: "item-image"
+          %p.buy-item-name.bold
+            COACH コーチ ショルダーバッグ
+          = form_for @personal_info,url: "https://www.mercari.com/jp/mypage/identification/save/" , html: {class: "buy-form"} do |f|
+            %p.buy-price-ja.bold
+              ¥2,500
+              %span.item-shipping-fee.bold
+                送料込み
+            %ul.buy-accordion.not-have
+              %li.accordion-parent
+                .accordion-toggle
+                  ポイントはありません
+            %ul.buy-price-table
+              %li.buy-price-table__row.buy-you-pay.bold
+                .buy-price-table__row__cell
+                  支払い金額
+                .buy-price-table__row__cell
+                  %span
+                    ¥2,500
+            %p.has-error-text
+              配送先と支払い方法の入力を完了してください。
+            = f.submit "購入する" ,class:"btn-default btn-red"
+      %section.buy-content.buy-user-info
+        .buy-content-inner-address
+          %h3.buy-content-inner-title
+            配送先
+          %address.buy-user-info-text
+            〒333-0000
+          %br
+            大阪府 大阪市AAA区9-2-222
+          %br
+            田中 太郎
+          %p.buy-user-info-text
+          = link_to root_path ,class: "buy-user-info-fix" do
+            %span
+              変更する
+              %i.icon-arrow-right
+                = icon('fas','chevron-right')
+      %section.buy-content.buy-user-info
+        .buy-content-inner-pay
+          %h3.buy-content-inner-title
+            支払い方法
+          %p.buy-user-info-text
+            %br
+              &#047;
+          = link_to root_path ,class: "buy-user-info-fix-pay" do
+            %span
+              変更する
+              %i.icon-arrow-right
+                = icon('fas','chevron-right')
+
