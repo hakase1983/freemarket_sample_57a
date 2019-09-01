@@ -2,14 +2,13 @@
 @import "vendor_prefix.scss";
 @import "color.scss";
 @import "mixin.scss";
-@import "top-bar.scss";
-@import "top-page.scss";
-@import "bottom_bar.scss";
-@import "profile.scss";
-@import "item-new.scss";
 @import 'font-awesome-sprockets';
 @import "font-awesome";
-@import "logout_view";
+@import "top-bar.scss";
+@import "top-page.scss";
+@import "bottom-bar.scss";
 @import "l-sidebar";
+@import "item-buy-confirmation.scss";
+@import "item-new.scss";
+@import "logout_view";
 @import "user-confirmation_view";
-
