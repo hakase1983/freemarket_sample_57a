@@ -76,7 +76,10 @@ end
 
 gem 'haml-rails'
 gem 'font-awesome-sass'
-
+gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
+gem 'payjp'
+gem 'ancestry'
+gem 'dotenv-rails'

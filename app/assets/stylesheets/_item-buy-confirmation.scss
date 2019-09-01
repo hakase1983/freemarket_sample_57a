@@ -1,0 +1,168 @@
+.single-container{
+  padding: 0 0 220px;
+  &__header{
+    height: 128px;
+    text-align: center;
+  }
+  &__main{
+    display: block;
+    background: #f5f5f5;
+    height: 768px;
+    .l-single-container{
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      &__head{
+        padding: 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      .buy-content{
+        margin: 0;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+      }
+      .buy-item{
+        text-align: center;
+      }
+        .buy-content-inner{
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 320px;
+          margin: 0 auto;
+          .item-image{
+            width: 64px;
+          }
+          .buy-item-name.bold{
+            width: calc(100% - 80px);
+            margin: 3px 0 0 16px;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 600;
+          }
+          .buy-form{
+            width: 100%;
+            .buy-price-ja{
+              font-size: 18px;
+              margin: 8px 0 0;
+              line-height: 1.5;
+              .item-shipping-fee{
+                margin: 0 0 0 8px;
+                font-size: 14px;
+                font-weight: 400;
+              }
+            }
+            .buy-accordion.not-have{
+              background: #ccc;
+              margin: 16px 0 0;
+              .accordion-toggle{
+                padding: 16px;
+                font-size: 14px;
+              }
+            }
+            .buy-price-table{
+              display: table;
+              border-collapse: collapse;
+              width: 100%;
+              &__row{
+                font-size: 18px;
+                display: table-row;
+                
+                &__cell{
+                  :first-child {
+                    text-align: left;
+                    font-size: 21px;
+                  }
+                  display: table-cell;
+                  padding: 16px 0;
+                  text-align: right;
+                  font-size: 18px;
+                  font-weight: bold;
+                }
+              }
+            }
+            .has-error-text{
+              margin: 8px 0 0;
+              line-height: 1.5;
+              color: #ea352d;
+              line-height: 1.5;
+              font-size: 14px;
+            }
+            .btn-default.btn-red{
+              margin: 8px 0 0;
+              border: 1px solid #888;
+              background: #888;
+              color: #fff;
+              cursor: not-allowed;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+            }
+          }
+        }
+        .buy-content.buy-user-info{
+          margin: 40px 0 0;
+          padding: 24px 12.5% 0;
+          border-top: 1px solid #f5f5f5;
+          .buy-content-inner{
+            max-width: 320px;
+            margin: 0 auto;
+            .buy-user-info-text{
+              margin: 8px 0 0;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+            .buy-user-info-fix{
+              display: block;
+              text-align: right;
+              font-size: 14px;
+              .a{
+                color: #0099e8;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+          .buy-content-inner-address{
+            max-width: 320px;
+            margin: 0 auto;
+            .buy-content-inner-title{
+              font-weight: 600;
+            }
+            .buy-user-info-text{
+              margin: 23px 0 0;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+            .buy-user-info-fix{
+              display: block;
+              text-align: right;
+            }
+          }
+        .buy-content-inner-pay{
+          max-width: 320px;
+          margin: 0 auto;
+          .buy-content-inner-title{
+            font-weight: 600;
+          }
+          .buy-user-info-text{
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+          .buy-user-info-fix-pay{
+            display: block;
+            text-align: right;
+          }
+          
+        }
+    }
+  }
+      
+
+    
+
+}
