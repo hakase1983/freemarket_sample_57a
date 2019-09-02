@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "items#index"
-  resources :items
+  devise_for :users
+  root 'items#index'
+  resources :users
+  resources :cards do
+    collection do
+      get "add"
+    end
+  end
+  resources :items do
+    collection do
+      get "confirmation" 
+    end
+  end
 end
