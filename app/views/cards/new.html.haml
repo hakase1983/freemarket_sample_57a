@@ -1,0 +1,59 @@
+.container.clearfix
+  .right-content
+    .right-chapter-container
+      .content__title
+        %h2 クレジットカード情報入力
+      .content__credit-card
+        = form_with url: cards_path, method: :post, html: { name: "inputForm" },class: "card-form" do |f|  
+          .card-form__content
+            .form-group
+              %label
+                カード番号
+                %span.form-require
+                  必須
+              = f.text_field :card_number, type: 'text', class: 'input-default', placeholder: '半角数字のみ', maxlength: "16",id: "a"
+              %ul.signup-card-list
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2394192159",width: "49",height: "20"
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2394192159",width: "34",height: "20"
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2394192159",width: "30",height: "20"
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2394192159",width: "32",height:"20"
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2394192159",width:"21",height:"20"
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2394192159",width:"32",height:"20"
+                %li
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2394192159",width: "32",height:"20"
+            .form-group.signup-expire
+              %label
+                有効期限
+                %span.form-require
+                  必須
+                %br
+                .card-select-wrap.half
+                  %i.icon-arrow-bottom
+                    = icon "fas","angle-down"
+                  = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'select-default',id: "c"
+                  %span.expire-text 月
+                  %br
+                .card-select-wrap.half
+                  %i.icon-arrow-bottom
+                    = icon "fas","angle-down"
+                  = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'select-default',id: "d"
+                  %span.expire-text 年
+            .form-group
+              .cards-expire
+                %label
+                  セキュリティコード
+                  %span.form-require
+                    必須
+                = f.text_field :cvc, type: 'text', class: 'input-default', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4",id:"b"
+                .signup-text
+                  %span.form-question ?
+                  カード裏面の番号とは？
+                .content-bottom#card_token
+              = f.submit '追加する', class: 'btn-default-red', id: 'token_submit'
+  = render 'layouts/l-sidebar'

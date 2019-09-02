@@ -1,0 +1,21 @@
+.container.clearfix
+  .right-content
+    .right-chapter-container
+      .content-title
+        %h2 支払い方法
+      .right-inner
+        .right-content-inner
+          %h3.right-sub-head
+            クレジットカード一覧
+        .add-card
+          .right-content-inner
+            =link_to new_card_path ,class:"cardbtn-default-red" do
+              %i.icon-card
+                =icon "fas","credit-card"
+              クレジットカードを追加する
+        .settings-way
+          =link_to root_path do
+            %span 支払い方法について
+            %i.icon-arrow-right
+              =icon "fas","chevron-right"
+  = render 'layouts/l-sidebar'

@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :configure_permitted_parameters, if: :devise_controller? #デバイスに関する画面で機能する
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])  #元々の機能にはメアドとパスワードしか設定されていないため新しいキーを追加する時にこれを使う
+  end
   private
 
   def production?
