@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
-  root to: "items#index"
-
-  resources :items
+  root 'items#index'
+  resources :users
+  resources :cards do
+    collection do
+      get "add"
+    end
+  end
+  resources :items do
+    collection do
+      get "confirmation" 
+    end
+  end
+  
   resources :signup do
     collection do
       get 'step1'
