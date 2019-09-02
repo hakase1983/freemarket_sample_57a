@@ -1,0 +1,138 @@
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
+.main{
+  background-color: #fff;
+  display: block;
+  background-color: rgba(223, 217, 217,0.3);
+}
+  .top-page-image{
+    height:400px;
+    width:100%;
+    background-color: rgba(202, 197, 197, 0.2);
+  }
+  .top-page-image img {
+    display: block;
+    height: 350px;
+    width: 680px;
+    margin: 0 auto;
+    padding-top: 28px;
+  }
+  .pickup-container {
+    padding: 40px 0;
+    background: $merukari-haikei;
+   }
+   .pickup-container h2 {
+    font-size: 28px;
+    text-align: center;
+    font-weight:600;
+  }
+  .item-box-container {
+    width: 940px;
+    margin: 0 auto;
+  }
+  .item-box-container::after{
+    @include clearfix;
+  }
+  .text-center {
+    text-align: center;
+    font-size: 22px;
+    margin: 26px 11px;
+    font-weight:600;
+  }
+  a {
+    color: #0099e8;
+    text-decoration: none;
+  }
+  img {
+    vertical-align: middle;
+  }
+  .item-box-content{
+    width: 940px;
+    margin: 0 auto;
+    height:330px;
+  }
+  
+  .item-box a {
+    display: block;
+    color: #333;
+  }
+  .item-box {
+    margin: 0 0 0 20px;
+    width: 213px;
+    position: relative;
+    float: left;
+    background: #fff;
+  
+  &__photo {
+    overflow: hidden;
+    position: relative;
+    width: 213px;
+    height: 220px;
+  }
+  &__photo img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  &__body {
+    padding: 16px;
+    height: 78px;
+  }
+  &__name {
+    overflow: hidden;
+    position: relative;
+    font-weight: 500;
+    height: 3em;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: normal;
+    font-size: 15px;
+  }
+  &__name::after{
+    @include clearfix;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1.5em;
+    background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+  }
+  &__num{
+    @include display;
+    @include align;
+    @include pack;
+    justify-content: space-between;
+    margin: 8px 0 0;
+  }
+  &__price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+.icon-like-border span{
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.icon-like-border {
+  color: #ccc;
+}
+.view-all {
+  padding: 20px 0 30px;
+  width: 99.5%;
+  text-align: right;
+}
+
