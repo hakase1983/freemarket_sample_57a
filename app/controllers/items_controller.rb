@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def confirmation
     @personal_info = PersonalInfo.new
+  end
     
   def new
     @item = Item.new
