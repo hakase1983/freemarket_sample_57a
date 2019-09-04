@@ -25,7 +25,7 @@
       .main__single-container__head
         住所入力
 
-      = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
+      = form_for @user, url: signup_index_path, method: :post, html: {class: 'first-main__box'} do |f|
         = f.fields_for :personal_infos do |pf|
           
           .single-content
@@ -82,6 +82,6 @@
 
               .single-content__form-group
                 %button.btn-default
-                  = link_to "次へ進む", step4_signup_index_path
+                  = f.submit "次へ進む"
 
 = render "layouts/user_item_bottom-bar"

@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2019_08_30_072953) do
     t.string "address_num", null: false
     t.string "building_name"
     t.string "telephone"
-    t.date "birth_day"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -108,6 +107,11 @@ ActiveRecord::Schema.define(version: 2019_08_30_072953) do
     t.string "email", null: false
     t.string "image"
     t.text "profile"
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birth_day"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
