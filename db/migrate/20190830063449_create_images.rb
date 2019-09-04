@@ -11,7 +11,7 @@ class CreateImages < ActiveRecord::Migration[5.2]
       t.string :image8
       t.string :image9
       t.string :image10
-      t.string :item_id
+      t.references :item ,null: false ,foreign_key: true
       t.timestamps
     end
   end

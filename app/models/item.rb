@@ -1,8 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
-  belongs_to :brand
-  belongs_to :size
-  belongs_to :category
+  has_one :brand
+  has_one :size
+  has_one :category
   has_many :comments
   has_many :likes
   has_one :seller
@@ -14,4 +14,8 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User"
 
   accepts_nested_attributes_for :delivery
+  accepts_nested_attributes_for :image
+  accepts_nested_attributes_for :category
+  accepts_nested_attributes_for :size
+  accepts_nested_attributes_for :brand
 end

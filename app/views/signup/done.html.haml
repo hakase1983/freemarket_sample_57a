@@ -1,0 +1,35 @@
+.single-container
+  .header
+    %h1
+      = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3312594182"), "/"
+    %nav.header__progress-bar.header__signup-bar
+      %ol.crearfix
+        %li.no-active5.member5
+          会員情報
+          .progress-status
+        %li.no-active5.tel-num5
+          電話番号認証
+          .progress-status
+        %li.active5.delivery-address5
+          お届け先住所入力
+          .progress-status
+        %li.no-active5.pay-info5
+          支払い情報
+          .progress-status
+        %li.complete-page5
+          完了
+          .progress-status
+
+  .main
+    .main__single-container
+      .main__single-container__head
+        会員登録完了
+
+      = form_for @user, url: user_session_path, method: :post do |f|     
+        .submit-content
+          ありがとうございます。
+          %br
+          会員登録が完了しました。
+        .submit-content
+          = f.submit "メルカリをはじめる", id: "signup-submit",class: "btn-default"
+= render 'layouts/user_item_bottom-bar'
