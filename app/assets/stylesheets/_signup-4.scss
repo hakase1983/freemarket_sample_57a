@@ -223,9 +223,6 @@
     font-weight: bold;
   }
 }
-.form-group{
-  margin: 32px 0 0;
-}
 .card-select-box::after{
   @include clearfix;
 }
@@ -237,85 +234,14 @@
     max-width: 343px;
   }
 }
-.signup-card-list{
-  margin: 8px 0 0;
-  font-size: 0;
-  list-style: none;
-}
-.signup-card-list li:first-child{
-  margin: 0;
-}
-.signup-card-list li {
-  display: inline-block;
-  margin: 0 0 0 8px;
-  vertical-align: middle;
-}
-.card-select-wrap.half {
-  display: inline-block;
-  margin: 8px 0 0;
-  width: calc(50% - 2px);
-}
-.card-select-wrap.icon-arrow-bottom {
-  position: absolute;
-  top: 3px;
-  z-index: 2;
-  color: #888;
-  font-size: 30px;
-  @include transform;
-}
-.card-select-wrap select {
-  width: calc(100% - 38px);
-  
-}
-.signup-text {
-  position: relative;
-  margin: 8px 0 0;
-  text-align: right;
-  color: #0099e8;
-}
-label{
-  font-weight: 600;
-  display: inline-block;
-}
-.form-require{
-  background: #ea352d;
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  vertical-align: top;
-}
-input{
+
+.single-content__form-group input{
   width: 90%;
   margin: 6px 0 0;
   height: 25px;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
-}
-a{
-  text-decoration: none;
-}
-
-
-#c{
-  width: 35%;
-  margin: 6px 0 0;
-  height: 30px;
-  padding: 10px 16px 8px;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
-}
-#d{
-  width: 35%;
-  margin: 6px 0 0;
-  height: 30px;
-  padding: 10px 16px 8px;
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
