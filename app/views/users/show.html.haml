@@ -1,14 +1,8 @@
-.defalt-container
-  %nav.bread-crums
-    %ul.bread-crums-ul
-      %li.bread-crums-list
-        = link_to 'メルカリ'
-        = icon('fas','chevron-right', class: 'icon-arrow-right')
-      %li.bread-crums-list.li-last-child
-        = link_to 'マイページ'
+.mypage-default-container
+  = render 'layouts/bread-crums'
 
-  .l-container.clearfix
-    .l-content
+  .mypage-l-container.clearfix
+    .mypage-l-content
       %section.mypage-user-icon
         = link_to root_path , class: "mypage-user-bar" do
           %figure

@@ -1,21 +1,12 @@
-.defalt-container
-  %nav.bread-crums
-    %ul.bread-crums-ul
-      %li.bread-crums-list
-        = link_to 'メルカリ'
-        = icon('fas','chevron-right', class: 'icon-arrow-right')
-      %li.bread-crums-list
-        = link_to 'マイページ'
-        = icon('fas','chevron-right', class: 'icon-arrow-right')
-      %li.bread-crums-list.li-last-child
-        = link_to 'ログアウト'
+.logout-default-container
+  = render 'layouts/bread-crums'
 
-  .l-container.clearfix
-    .l-content
-      .l.chapter-container
-        .l-single-inner
-          .l-single-content
-            .btn-default.btn-red
+  .logout-l-container.clearfix
+    .logout-l-content
+      .logout-l.logout-chapter-container
+        .logout-l-single-inner
+          .logout-l-single-content
+            .logout-btn-default.logout-btn-red
               ログアウト
     = render 'layouts/l-sidebar'
 
