@@ -2,6 +2,7 @@ class PersonalInfosController < ApplicationController
   
   def new
     @personal_info = PersonalInfo.new
+    render layout: "compact"
   end
 
   def create
