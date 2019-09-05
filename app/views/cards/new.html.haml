@@ -34,15 +34,15 @@
                   必須
                 %br
                 .card-select-wrap.half
-                  %i.icon-arrow-bottom
-                    = icon "fas","angle-down"
                   = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'select-default',id: "c"
+                  %i.icon-arrow-bottom-card
+                    = icon "fas","angle-down"
                   %span.expire-text 月
                   %br
                 .card-select-wrap.half
-                  %i.icon-arrow-bottom
-                    = icon "fas","angle-down"
                   = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'select-default',id: "d"
+                  %i.icon-arrow-bottom-card
+                    = icon "fas","angle-down"
                   %span.expire-text 年
             .form-group
               .cards-expire

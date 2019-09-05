@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get "confirmation" 
+      get "complete"
       get 'get_image', defaults: { format: 'json' }
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
