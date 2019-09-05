@@ -27,9 +27,15 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    @item.save
+    if @item.save
+      redirect_to :complete
+    else
+      render :new
+    end
   end
-
+  def complete
+  end
+ 
   def item_params
     params.require(:item).permit(:name,:description,:category_id,:condition,:price,image_attributes: [:image1,:image2,:id],size_attributes: [:id,:name],brand_attributes: [:id,:name],delivery_attributes: [:id,:fee,:area,:delivery_days])
   end
