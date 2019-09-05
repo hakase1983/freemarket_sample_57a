@@ -1,23 +1,23 @@
-.single-container
-  %header.single-container__header
-  %main.single-container__main
-    .l-single-container.buy-item-container
-      %h2.l-single-container__head
+= render 'layouts/user_item_top-bar'
+.confirmation-single-container
+  %main.confirmation-single-container__main
+    .confirmation-l-single-container.buy-item-container
+      %h2.confirmation-l-single-container__head
         購入内容の確認
-      %section.buy-content.buy-item
-        .buy-content-inner
+      %section.confirmation-buy-content.confirmation-buy-item
+        .confirmation-buy-content-inner
           %h3.buy-item-image
-            = image_tag  "https://static.mercdn.net/thumb/photos/m28167667275_1.jpg?1567138930", class: "item-image"
-          %p.buy-item-name.bold
+            = image_tag  "https://static.mercdn.net/thumb/photos/m28167667275_1.jpg?1567138930", class: "confirmation-item-image"
+          %p.confirmation-buy-item-name.bold
             COACH コーチ ショルダーバッグ
-          = form_for @personal_info,url: "https://www.mercari.com/jp/mypage/identification/save/" , html: {class: "buy-form"} do |f|
-            %p.buy-price-ja.bold
+          = form_for @users,url: "https://www.mercari.com/jp/mypage/identification/save/" , html: {class: "confirmation-buy-form"} do |f|
+            %p.confirmation-buy-price-ja.bold
               ¥2,500
-              %span.item-shipping-fee.bold
+              %span.confirmation-item-shipping-fee.bold
                 送料込み
-            %ul.buy-accordion.not-have
-              %li.accordion-parent
-                .accordion-toggle
+            %ul.confirmation-buy-accordion.not-have
+              %li.confirmation-accordion-parent
+                .confirmation-accordion-toggle
                   ポイントはありません
             %ul.buy-price-table
               %li.buy-price-table__row.buy-you-pay.bold
@@ -28,7 +28,7 @@
                     ¥2,500
             %p.has-error-text
               配送先と支払い方法の入力を完了してください。
-            = f.submit "購入する" ,class:"btn-default btn-red"
+            = f.submit "購入する" ,class:"confirmation-btn-default"
       %section.buy-content.buy-user-info
         .buy-content-inner-address
           %h3.buy-content-inner-title
@@ -57,4 +57,4 @@
               変更する
               %i.icon-arrow-right
                 = icon('fas','chevron-right')
-
+= render 'layouts/user_item_bottom-bar'

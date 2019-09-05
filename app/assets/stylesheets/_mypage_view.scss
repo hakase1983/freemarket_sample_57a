@@ -1,0 +1,284 @@
+.mypage-default-container{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 1300px;
+  background-color: rgb(245, 245, 245);
+  .mypage-l-container{
+    margin: 40px auto 0;
+    width: 1020px;
+    content: '';
+    display: block;
+    clear: both;
+    height: 1292px;
+    .mypage-l-content{
+      float: right;
+      width: 700px;
+      .mypage-user-icon{
+        height: 200px;
+        position: relative;
+        background-image: url(https://i.gyazo.com/5a4b12925686240eca1837f1ac3fdd0d.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        .mypage-user-bar{
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translate(0, -50%);
+          color: #333;
+            .mypage-user-radius{
+              border-radius: 50px 50px;
+            }
+          .bold{
+            line-height: 1.4;
+            font-weight: 600;
+          }
+          .mypage-number{
+            margin: 8px 0 0;
+            font-size: 0;
+            &__inner{
+              display: inline-block;
+              font-size: 14px;
+              margin: 0 0 0 16px;
+            }
+
+          }
+        
+        }
+      }
+
+      .mypage-tab-container-notification-todo{
+        margin: 0;
+        background: #fff;
+        .mypage-tabs{
+          border: 0;
+          background: #eee;
+          font-size: 0;
+          list-style: none;
+          font-weight: bold;
+          .active{
+            background: #fff;
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            .mypage-user-tab1{
+              border-top: 2px solid #ea352d;
+              position: relative;
+              display: block;
+              color: #333;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+          .todo-list{
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            width: 50%;
+            .mypage-user-tab2{
+              position: relative;
+              display: block;
+              color: #333;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+        }
+
+        .tab-content{
+          .mypage-item-list{
+            display: block;
+            list-style: none;
+            &__box{
+              position: relative;
+              border-bottom: 1px solid #eee;
+              .mypage-item-list-box:first-child{
+                border-bottom: 1px solid #eee;
+              }
+                .mypage-item-link{
+                  display: block;
+                  min-height: 60px;
+                  padding: 16px;
+                  color: #333;
+                  .figure{
+                    position: relative;
+                    overflow: hidden;
+                    float: left;
+                    width: 48px;
+                    height: 48px;
+                      .mypage-user-box{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                        width: 100%;
+                      }
+                  }
+                  .mypage-item-body{
+                    margin: 0 40px 0 68px;
+                    .mypage-item-text{
+                      overflow: hidden;
+                      display: -webkit-box;
+                      max-height: 4.4em;
+                      -webkit-line-clamp: 3;
+                      -webkit-box-orient: vertical;
+                      text-overflow: ellipsis;
+                      line-height: 1.5;
+                      .icon-time{
+                        flex-direction: column;
+                        margin: 0 8px 0 0;
+                      }
+                      .out-time{
+                        vertical-align: middle;
+                      }
+                    }
+                  }
+                  .icon-arrow-right{
+                    position: absolute;
+                    top: 50%;
+                    right: 16px;
+                    transform: translate(0, -50%);
+                  }
+                }
+            }
+          }
+          .tab-pane{
+            display: block;
+            list-style: none;
+          }
+          .active{
+            display: block;
+            list-style: none;
+          }
+        }
+        .display1{
+          display: block;
+        }
+        .display2{
+          display: none;
+        }
+      }
+      .mypage-go-list{
+        display: block;
+        padding: 16px;
+        display: block;
+        height: 56px;
+        margin: 0 auto;
+        color: #333;
+        line-height: 56px;
+        text-align: center;
+        .mypage-buttom{
+          display: block;
+          height: 56px;
+          margin: 0 auto;
+          background: #eee;
+          color: #333;
+          line-height: 56px;
+          text-align: center;
+        }
+      }
+
+      .mypage-tab-container{
+        margin: 40px 0 0;
+        background: #fff;
+        .mypage-tab-head{
+          padding: 0 16px;
+          background: #fafafa;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+        }
+        .mypage-tabs{
+          border: 0;
+          background: #eee;
+          font-size: 0;
+          list-style: none;
+          font-weight: bold;
+          .now{
+            background: #fff;
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            .mypage-continue-tab1{
+              border-top: 2px solid #ea352d;
+              position: relative;
+              display: block;
+              color: #333;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+          .past{
+            width: 50%; 
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            .mypage-end-tab2{
+              position: relative;
+              display: block;
+              color: #333;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+        }
+        .tab-content{
+          .mypage-item-list.tab-pane.active{
+            .mypage-item-not-found.bold{
+              border: 0;
+              padding: 160px 0 60px;
+              background: url(https://i.gyazo.com/040a473a9648bf87858bc493367393d0.png);
+              background-repeat: no-repeat;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+        .bought-display1{
+          display: block;
+        }
+        .bought-display2{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.bread-crums{
+  position: relative;
+  border-top: 1px solid #eee;
+  background: #f5f5f5;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  height: 49px;
+
+  .bread-crums-ul{
+    overflow: visible;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .bread-crums-list{
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+    .li-last-child{
+      font-weight: 600;
+    }
+  }
+}

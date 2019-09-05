@@ -1,0 +1,14 @@
+#create-layer
+#create-popup
+  .complete__box.clearfix
+    .complete__title
+      %h3
+        出品が完了しました
+    .complete__content
+      .complete__content-title
+        %h2
+          あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+      =link_to new_item_path do
+        %button.item-add-button
+          続けて出品する
+      =link_to "商品ページへ行ってシェアする",root_path,class: "item-page"

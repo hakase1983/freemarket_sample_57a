@@ -1,0 +1,16 @@
+.logout-default-container
+  = render 'layouts/bread-crums'
+
+  .logout-l-container.clearfix
+    .logout-l-content
+      .logout-l.logout-chapter-container
+        .logout-l-single-inner
+          .logout-l-single-content
+            .logout-btn-default.logout-btn-red
+              ログアウト
+    = render 'layouts/l-sidebar'
+
+= link_to root_path,class: "sell-btn" do
+  %div 出品
+  %i.icon-camera
+    = icon "fas","camera"

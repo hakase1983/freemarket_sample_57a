@@ -1,4 +1,4 @@
-.l-side{
+.left-side{
   float: left;
   width: 280px;
   margin: 0 40px 0 0;
@@ -29,14 +29,10 @@
           transform: translate(0, -50%);
         }
       }
-      .active{
-        background: #eee;
-        font-weight: 600;
-        border-bottom-style: none;
-      }
     }
     .mypage-nav-head{
       margin: 40px 0 0;
+      font-weight: bold;
     }
   }
 }

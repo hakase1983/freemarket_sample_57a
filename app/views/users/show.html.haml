@@ -1,0 +1,108 @@
+.mypage-default-container
+  = render 'layouts/bread-crums'
+
+  .mypage-l-container.clearfix
+    .mypage-l-content
+      %section.mypage-user-icon
+        = link_to root_path , class: "mypage-user-bar" do
+          %figure
+            = image_tag '//static.mercdn.net/images/member_photo_noimage_thumb.png',height: '60px', width: '60px' ,class: "mypage-user-radius"
+          %h2.bold
+            名前
+          .mypage-number
+            .mypage-number__inner
+              評価 
+              %span.bold
+                0
+            .mypage-number__inner
+              出品数 
+              %span.bold
+                0
+      %section.mypage-tab-container-notification-todo
+        %ul.mypage-tabs
+          %li.active
+            %h3
+              .mypage-user-tab1
+                お知らせ
+          %li.todo-list
+            %h3
+              .mypage-user-tab2
+                やることリスト
+
+        .tab-content.notice.display1
+          %ul.mypage-item-list.tab-pane.active
+            %li.mypage-item-list__box
+              = link_to root_path , class: "mypage-item-link" do
+                %figure.figure
+                  = image_tag '//static.mercdn.net/images/mercari_profile.png',height: '48px', width: '48px' ,class: "mypage-user-box"
+                .mypage-item-body
+                  .mypage-item-text
+                    《出品するだけ》総額1億円相当還元！メルカリ秋フェスが開催中♪
+                  %time
+                    = icon('far','clock', class: 'icon-time')
+                    %span.out-time
+                      21 時間前
+                = icon('fas','chevron-right', class: 'icon-arrow-right')
+
+            %li.mypage-item-list__box
+              = link_to root_path , class: "mypage-item-link" do
+                %figure.figure
+                  = image_tag '//static.mercdn.net/images/mercari_profile.png',height: '48px', width: '48px' ,class: "mypage-user-box"
+                .mypage-item-body
+                  .mypage-item-text
+                    3日後、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  %time
+                    = icon('far','clock', class: 'icon-time')
+                    %span.out-time
+                      23 時間前
+                = icon('fas','chevron-right', class: 'icon-arrow-right')
+            %li.mypage-go-list
+              = link_to "一覧を見る" , root_path , class: "mypage-buttom" 
+
+        .tab-content.todo.display2
+          %ul.mypage-item__list.tab-pane.active
+            %li.mypage-item-list__box
+              = link_to root_path , class: "mypage-item-link" do
+                %figure.figure
+                  = image_tag '//static.mercdn.net/images/mercari_profile.png',height: '48px', width: '48px' ,class: "mypage-user-box"
+                .mypage-item-body
+                  .mypage-item-text
+                    メールが届いていない状態です。設定しているメールアドレスをご確認ください
+                  %time
+                    = icon('far','clock', class: 'icon-time')
+                    %span.out-time
+                      21 時間前
+                = icon('fas','chevron-right', class: 'icon-arrow-right')
+
+            %li.mypage-go-list
+              = link_to "一覧を見る" , root_path , class: "mypage-buttom" 
+
+              
+      %section.mypage-tab-container
+        %h2.mypage-tab-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.now
+            %h3
+              .mypage-continue-tab1
+                取引中
+          %li.past
+            %h3
+              .mypage-end-tab2
+                過去の取引
+        .tab-content.bought-display1
+          %ul.mypage-item-list.tab-pane.active
+            %li.mypage-item-not-found.bold
+              取引中の商品がありません
+
+        .tab-content.past-transaction.bought-display2
+          %ul.mypage-item-list.tab-pane.active
+            %li.mypage-item-not-found.bold
+              過去に取引した商品がありません
+
+    = render 'layouts/l-sidebar'
+
+= link_to root_path,class: "sell-btn" do
+  %div 出品
+  %i.icon-camera
+    = icon "fas","camera"
