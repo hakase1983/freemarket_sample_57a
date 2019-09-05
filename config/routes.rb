@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'items#index'
+  root 'users#edit'
   resources :users do
     collection do
       get "logout"

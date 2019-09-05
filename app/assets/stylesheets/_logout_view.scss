@@ -1,4 +1,4 @@
-.defalt-container{
+.logout-default-container{
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
@@ -33,24 +33,24 @@
       }
     }
   }
-  .l-container.clearfix{
+  .logout-l-container.clearfix{
     margin: 40px auto 0;
     width: 1020px;
     content: '';
     display: block;
     clear: both;
     height: 1292px;
-    .l-content{
+    .logout-l-content{
       float: right;
       width: 700px;
-      .l.chapter-container{
+      .logout-l.logout-chapter-container{
         background: #fff;
-        .l-single-inner{
+        .logout-l-single-inner{
           padding: 64px;
-          .l-single-content{
+          .logout-l-single-content{
             max-width: 320px;
             margin: 0 auto;
-            .btn-default{
+            .logout-btn-default{
               background: #ea352d;
               border: 1px solid #ea352d;
               color: #fff;

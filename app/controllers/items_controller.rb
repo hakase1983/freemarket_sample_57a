@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def confirmation
     @personal_info = PersonalInfo.new
+    render layout: 'compact'
   end
     
   def new

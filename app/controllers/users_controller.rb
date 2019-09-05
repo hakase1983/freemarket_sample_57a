@@ -22,10 +22,10 @@ class UsersController < ApplicationController
   end
 
   def logout
+  end
   
   def profile
     @user = User.new
-
   end
 
 end
