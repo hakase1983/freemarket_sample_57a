@@ -7,10 +7,10 @@
     %li
       =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja" do
         = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3611986733", width: "133" ,height: "40"
-.footer
-  .footer__cells
-    .footer__list
-      %h2.footer__head
+.bottombar
+  .bottombar__cells
+    .bottombar__list
+      %h2.bottombar__head
         メルカリについて
       %ul
         %li
@@ -28,16 +28,16 @@
         %li
           = link_to root_path do
             メルカリロゴ利用ガイドライン
-        %li.footer__social-link
+        %li.bottombar__social-link
           = link_to "https://twitter.com/mercari_jp" do
             %i.icon-twitter
               = icon "fab", "twitter"
-        %li.footer__social-link
+        %li.bottombar__social-link
           = link_to "https://www.facebook.com/mercarijp" do
             %i.icon-facebook
               = icon "fab","facebook-square"
-    .footer__list
-      %h2.footer__head
+    .bottombar__list
+      %h2.bottombar__head
         ヘルプ＆ガイド
       %ul
         %li
@@ -64,10 +64,10 @@
         %li
           = link_to root_path do
             メルカリボックス
-    .footer__list-third
-      %h2.footer__head
+    .bottombar__list-third
+      %h2.bottombar__head
         プライバシーと利用規約
-      .footer__list-inner
+      .bottombar__list-inner
         %ul
           %li
             = link_to root_path do
@@ -81,7 +81,7 @@
           %li
             = link_to root_path do
               コンプラインアンスポリシー
-      .footer__list-inner
+      .bottombar__list-inner
         %ul
           %li
             = link_to root_path do
@@ -95,8 +95,8 @@
           %li
             = link_to root_path do
               法令順守と犯罪抑止のために
-    .footer__list-last
-      %h2.footer__head
+    .bottombar__list-last
+      %h2.bottombar__head
         国
       %ul
         %li
@@ -105,10 +105,10 @@
         %li
           = link_to root_path do
             United States
-  .footer__bottom
-    = link_to root_path ,class: "footer__logo" do
+  .bottombar__bottom
+    = link_to root_path ,class: "bottombar__logo" do
       =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?575670517", width: "124", height: "33"
-    %span.footer__copyright
+    %span.bottombar__copyright
       %small
         © 2019 Mercari
 

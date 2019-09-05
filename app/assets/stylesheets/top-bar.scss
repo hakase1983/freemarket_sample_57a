@@ -7,7 +7,7 @@
   a{
     text-decoration: none;
   }
-  .header{
+  .topbar{
     font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-weight: 500;
     position: relative;
@@ -75,7 +75,7 @@
             color:black;
           }
         }
-        .header-nav-box {
+        .topbar-nav-box {
           margin: 8px 0 0;
         &:after {
           @include clearfix;
@@ -84,7 +84,7 @@
             float: left;
           }
             
-            .header-nav h2 {
+            .topbar-nav h2 {
               font-size: 14px;
               font-weight: 400;
             }
@@ -92,20 +92,20 @@
               font-size: 22px;
               line-height: 1.4;
             }
-            .header-nav>li:first-child {
+            .topbar-nav>li:first-child {
               padding-left: 0;
             }
-            .header-nav>li {
+            .topbar-nav>li {
                 position: relative;
                 display: inline-block;
                 padding: 0 11px;
                 cursor: pointer;
             }
-            .header-nav a {
+            .topbar-nav a {
               display: block;
               color: #333;
             }
-            .header-nav {
+            .topbar-nav {
               font-size: 0;
               &__root {
                 position: relative;
@@ -114,7 +114,7 @@
                 font-weight: 700;
               }
             }
-              .header-cat-brand-icon {
+              .topbar-cat-brand-icon {
                 color: #ea352d;
                 margin-right: 4px;
               }
@@ -122,19 +122,19 @@
             float: right;
             height:44px;
           }
-            .header-user-nav {
+            .topbar-user-nav {
               font-size: 0;
             }
-              .header-user-nav>li:first-child {
+              .topbar-user-nav>li:first-child {
                 padding-left: 0;
               }
-              .header-user-nav>li {
+              .topbar-user-nav>li {
                 position: relative;
                 display: inline-block;
                 padding: 0 14px;
                 cursor: pointer;
               }
-              .header-user-icon {
+              .topbar-user-icon {
                 position: relative;
                 display: block;
                 height: 44px;
@@ -142,32 +142,32 @@
                 font-size: 0;
                 color: #333;
               }
-              .header-user-icon figure {
+              .topbar-user-icon figure {
                 display: inline-block;
                 position: relative;
                 text-align: center;
                 vertical-align: middle;
               }
               
-              .header-user-icon figure img {
+              .topbar-user-icon figure img {
                 vertical-align: bottom;
                 overflow: hidden;
                 border-radius: 50%;
               }
-              .header-user-nav>li i {
+              .topbar-user-nav>li i {
                 color: #ccc;
                 vertical-align: middle;
                 font-size:20px;
               }
-              .header-user-nav>li>a span {
+              .topbar-user-nav>li>a span {
                 margin-left: 10px;
                 font-size: 14px;
               }
-              .header-user-nav span {
+              .topbar-user-nav span {
                 vertical-align: middle;
               }
               
-              .header-menu-link {
+              .topbar-menu-link {
                 position: relative;
                 display: block;
                 height: 44px;
