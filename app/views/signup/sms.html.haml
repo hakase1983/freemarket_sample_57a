@@ -25,7 +25,7 @@
       .main__single-container__head
         電話番号の確認
 
-      = form_with do |pf|
+      = form_with method: :get do |pf|
         .single-content
           .single-content__form-group
             = pf.label :telephone, "携帯電話の番号", class: "registration-info"
@@ -35,7 +35,7 @@
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
 
           %button.btn-default
-            = link_to "SNSを送信する"
+            = link_to "SNSを送信する", new_personal_info_path
 
           .single-content__form-group__text
             ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

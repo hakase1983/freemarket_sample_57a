@@ -3,7 +3,27 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller? #デバイスに関する画面で機能する
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :family_name, :first_name, :family_name_kana, :first_name_kana, :birth_day])  #元々の機能にはメアドとパスワードしか設定されていないため新しいキーを追加する時にこれを使う
+    devise_parameter_sanitizer.permit(:sign_up, keys: [
+      :name, 
+      :family_name, 
+      :first_name, 
+      :family_name_kana, 
+      :first_name_kana, 
+      :birth_day,
+      personal_info_attributes: [
+        :user_id,
+        :family_name,
+        :first_name,
+        :family_name_kana,
+        :first_name_kana,
+        :birth_day,
+        :telephone,
+        :postal_code,
+        :prefecture_code,
+        :city_code,
+        :address_num,
+        :building_name
+      ]]) 
   end
   private
 

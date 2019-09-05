@@ -72,13 +72,13 @@ class SignupController < ApplicationController
     end
   end
 
-  def signup_type
+  def type
   end
 
-  def signup_sms
+  def sms
   end
 
-  def signup_completed
+  def completed
   end
 
   # private
@@ -89,20 +89,20 @@ class SignupController < ApplicationController
   #     :email,
   #     :password,
   #     :password_confirmation,
-  #     personal_info_attributes: [
-  #       :id,
-  #       :family_name,
-  #       :first_name,
-  #       :family_name_kana,
-  #       :first_name_kana,
-  #       :birth_day,
-  #       :telephone,
-  #       :postal_code,
-  #       :prefecture_code,
-  #       :city_code,
-  #       :address_num,
-  #       :building_name
-  #     ]
+      # personal_info_attributes: [
+      #   :id,
+      #   :family_name,
+      #   :first_name,
+      #   :family_name_kana,
+      #   :first_name_kana,
+      #   :birth_day,
+      #   :telephone,
+      #   :postal_code,
+      #   :prefecture_code,
+      #   :city_code,
+      #   :address_num,
+      #   :building_name
+      # ]
   #   )
   # end
 

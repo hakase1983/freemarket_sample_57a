@@ -23,7 +23,7 @@ class CardsController < ApplicationController
     )
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     if @card.save
-      redirect_to action: "new"
+      redirect_to completed_signup_index_path
     else
       redirect_to action: "create"
     end
@@ -33,5 +33,8 @@ class CardsController < ApplicationController
 
   def set_card
     # @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
+
+  def registration_card
   end
 end

@@ -1,13 +1,28 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions:      'users/sessions' ,
+    registrations: 'users/registrations',
+    passwords:     'users/passwords'
+  }
+
   root 'items#index'
-  resources :users
+
+  resources :users do
+    collection do
+      get "logout"
+    end
+  end
+
+  resources :personal_infos
+
   resources :cards do
     collection do
       get "add"
+      get "registration_card"
     end
   end
+  
   resources :items do
     collection do
       get "confirmation" 
@@ -16,11 +31,10 @@ Rails.application.routes.draw do
   
   resources :signup do
     collection do
-      get 'step1'
-      get 'step3'
-      get 'signup-type'
-      get 'signup-sms' 
-      get 'signup-completed' 
+      get 'type'
+      get 'sms' 
+      get 'completed' 
     end
   end 
+
 end
