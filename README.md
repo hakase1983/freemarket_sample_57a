@@ -50,18 +50,22 @@
 |image_id|references|null: false, foreign_key: true|
 |description|text|null: false|
 |category_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
 |condition|string|null: false|
 |price|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+
 
 
 ### Association
 - belongs_to :user
 - belongs_to :brand
-- belongs_to :size
+- has_one :size
 - belongs_to :category
 - has_many :comments
 - has_many :likes
+- has_one :seller
+- has_one :buyer
 - has_one :delivery
 - has_one :dealing
 - has_one :image
@@ -82,11 +86,12 @@
 |image8|string|-----------|
 |image9|string|-----------|
 |image10|string|----------|
-|item_id|string|----------|
+|item_id|references|----------|
 
 ### Association
 - belongs_to :item
-
+- mount_uploader :image1, ImageUploader
+- mount_uploader :image2, ImageUploader
 
 ## categoriesテーブル
 
@@ -115,6 +120,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
@@ -127,7 +133,7 @@
 |fee|string|null: false|
 |area|string|null: false|
 |delivery_days|string|null: false|
-|item_id|references|null: false, foreign_key: true|
+|item_id|references|null:false, foreign_key: true|
 
 ### Association
 - belongs_to :item

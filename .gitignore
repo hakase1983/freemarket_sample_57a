@@ -28,3 +28,4 @@
 config/credentials.yml.enc
 .DS_store
 .env
+public/uploads/*
