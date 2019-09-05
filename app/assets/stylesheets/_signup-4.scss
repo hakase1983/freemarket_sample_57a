@@ -193,14 +193,14 @@
     }
   }
 }
-.container.clearfix{
+.signup-container.clearfix{
   width: 700px;
   margin: 0 auto;
   background: #fff;
   display:block;
   padding: 0 0 40px;
 }
-.container.clearfix::after{
+.signup-container.clearfix::after{
   @include clearfix;
 }
 .right-content{

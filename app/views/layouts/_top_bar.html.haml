@@ -1,49 +1,49 @@
 .default-container
-  %header.header
-    .header__inner
+  %header.topbar
+    .topbar__inner
       .header__top
         %h1
-          = link_to "https://www.mercari.com/jp/" do
+          = link_to root_path do
             =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", alt: "mercari", height: "36", width: "134"
-        %form.header__form{action: "https://www.mercari.com/jp/search/"}
+        %form.topbar__form{action: "https://www.mercari.com/jp/search/"}
           %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
           %i.icon-search 
             = link_to root_path do
               = icon 'fas', 'search'
-      .header-nav-box.clearfix
+      .topbar-nav-box.clearfix
         %nav.list-left
-          %ul.header-nav
+          %ul.topbar-nav
             %li
               %h2
-                = link_to "https://www.mercari.com/jp/category/",class: "header-nav__root" do
-                  %i.header-cat-brand-icon 
+                = link_to "https://www.mercari.com/jp/category/",class: "topbar-nav__root" do
+                  %i.topbar-cat-brand-icon 
                     = icon 'fas', 'list'
                   %span カテゴリーから探す
             %li
               %h2
-                = link_to "https://www.mercari.com/jp/brand/",class: "header-nav__root" do
-                  %i.header-cat-brand-icon
+                = link_to "https://www.mercari.com/jp/brand/",class: "topbar-nav__root" do
+                  %i.topbar-cat-brand-icon
                     = icon 'fas', 'tag'
                   %span ブランドから探す
         .list-right
-          %ul.header-user-nav
+          %ul.topbar-user-nav
             %li.liked-items-link
-              = link_to "https://www.mercari.com/jp/mypage/like/history/",class: "header-menu-link" do
+              = link_to "https://www.mercari.com/jp/mypage/like/history/",class: "topbar-menu-link" do
                 %i.icon-like-border
                   = icon 'far', 'heart'
                 %span いいね！一覧
-            %li{"data-id": "header-user-nav", "data-key": "notification_list", "data-url": "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-              = link_to "https://www.mercari.com/jp/mypage/notification/",class: "header-menu-link" do
+            %li{"data-id": "topbar-user-nav", "data-key": "notification_list", "data-url": "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
+              = link_to "https://www.mercari.com/jp/mypage/notification/",class: "topbar-menu-link" do
                 %i.icon-bell
                   = icon 'far', 'bell'
                 %span お知らせ
-            %li{"data-id": "header-user-nav", "data-key": "todo_list", "data-url": "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-              = link_to "https://www.mercari.com/jp/mypage/todo/",class: "header-menu-link" do
+            %li{"data-id": "topbar-user-nav", "data-key": "todo_list", "data-url": "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
+              = link_to "https://www.mercari.com/jp/mypage/todo/",class: "topbar-menu-link" do
                 %i.icon-check
                   = icon 'fas', 'check'
                 %span やることリスト
             %li
-              = link_to cards_path,class: "header-user-icon" do
+              = link_to  new_card_path,class: "topbar-user-icon" do
                 %figure
                   %div
                     = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "32"

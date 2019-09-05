@@ -1,0 +1,181 @@
+.item
+  .item__view
+    .item__name
+      良品！！使用済み！！石川勇健のボーダーロンT
+      　　　　　　（石川サイン色紙付き）
+    .item__main-content.clearfix
+      .item__photo
+        .item__photo_main
+          = image_tag "https://gyazo.com/340eefb58889be7d047f2e8d6d79c174.png"
+        .item__photo_detail
+          .item__photo_detail_one
+            = image_tag "https://gyazo.com/0846c4656dec21ace99ee3435f549783.png"
+          .item__photo_detail_two
+            = image_tag "https://gyazo.com/55c347babfba92b427bb6343c27d3a68.png"
+          .item__photo_detail_three
+            = image_tag "https://gyazo.com/21450f77b63d01875fa621dbba4e665e.png"
+          .item__photo_detail_four
+            = image_tag "https://gyazo.com/6cb531edb775e6d9dfa9d9115b2c06e0.png"
+          .item__photo_detail_five
+            = image_tag "https://gyazo.com/6261c05bbd996f35ae7f901da0e7e939.png"
+          .item__photo_detail_six
+            = image_tag "https://gyazo.com/6c5d4cd914de528d5572bbce3cc91b5e.png"
+          .item__photo_detail_seven
+            = image_tag "https://gyazo.com/b9129afd8278904ea30155926ddc6c3b.png"
+          .item__photo_detail_eight
+            = image_tag "https://gyazo.com/3ca95ddbce56001d757696d083f38e32.png"
+          .item__photo_detail_nine
+            = image_tag "https://gyazo.com/3ca95ddbce56001d757696d083f38e32.png"
+          .item__photo_detail.ten
+            = image_tag "https://gyazo.com/3ca95ddbce56001d757696d083f38e32.png"
+      %table.item__detail
+        .table
+          %tr.table__one
+            %th.table__one__left
+              出品者
+            %td.table_one_right
+              = link_to "kitahata"
+              .Evaluation
+                .face-one
+                  %i.far.fa-grin-beam
+                  10
+                .face-two
+                  %i.far.fa-meh
+                  10
+                .face-three
+                  %i.far.fa-frown
+                  10
+          %tr.table_two
+            %th.table_two_left
+              カテゴリー
+            %td.table_two_right
+              = link_to "脱ぎたて"
+          %tr.table_three
+            %th.table_three_left
+              ブランド
+            %td.table_three_right
+              世界の石川
+          %tr.table_four
+            %th.table_four_left
+              商品サイズ
+            %td.table_four_right
+              M
+          %tr.table_five
+            %th.table_five_left
+              商品状態
+            %td.table_five_right
+              目立ったキズなし
+          %tr.table_six
+            %th.table_six_left
+              配送料の負担
+            %td.table_six_right
+              送料込み(出品者負担)
+          %tr.table_seven
+            %th.table_seven_left
+              配送の方法
+            %td.table_seven_right
+              玄関まで持参
+          %tr.table_eight
+            %th.table_eight_left
+              配送元地域	
+            %td.table_eight_right
+              = link_to "大阪府"
+          %tr.table_nine
+            %th.table_nine_left
+              発送日の目安
+            %td.table_nine_right
+              2~3日で発送    
+    .item__price
+      %span.price 
+        ¥100,000
+      %span.tax
+        (税込)
+      %span.shipping__fee
+        送料込み
+      
+    .item-buy-btn{href: "https://www.mercari.com/jp/transaction/buy/m80395519948/"}
+      =link_to "購入画面に進む"
+    .item__pr
+      .item_pr_text
+        毎週日曜日のバドミントン練習時に着用したものであり、脱ぎたての商品！！
+        
+        バドミントンという激しいスポーツで出た汗・・・そしてバドミントンへの情熱が注ぎ込まれた一品。
+
+        商品はあるタイ人から入手。
+
+        おまけのサインは今回初めて書いたサインで世界に一つ！！
+
+        サイン色紙がいらない場合は再度メルカリに出品してくださ〜い🎵
+
+        注）最近、本商品を謳った類似品の出品が多くみられます。特に類似した商品（ナティーのボーダーロンT）にご注意ください。
+        
+    .item-button-container.clearfix
+      .button__left
+        %a.button__like-btn
+          = icon 'far','heart'  
+          いいね! 100
+        %a.item__report
+          %i.far.fa-flag
+          不適切な商品の報告        
+      .button__right 
+        %i.fas.fa-unlock-alt 
+          .icon_lock
+            あんしん・あんぜんへの取り組み
+  .detail
+    .detail_message
+      .detail_message_form 
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会性分となることがあります。
+      .textarea-default  
+        =form_for @item, url:"/items/show" do |f|
+          =f.text_area :name,class:"message_field", placeholder:"(例)脱いで何時間後の商品ですか？"
+      %button.message-submit
+        コメントする
+  .item_link
+    .item__prev
+      = link_to "〈　友達以上"
+    .item__next
+      = link_to "恋人未満　〉"
+  .social-media
+    .media-box
+      =image_tag "https://gyazo.com/03358681e18749df01deeba6f07d1d42.png"
+  .other-item-profile
+    .other-item-head
+      = link_to "kitahataさんのその他の出品"
+    .item-lineup
+      %section.item-linenup_box1
+        .item-linenup_photo
+          =image_tag "https://gyazo.com/34159d183616abb89c6192479ef6f398.png" 
+        .item-linenup_description
+          %h3.item-linenup__name
+            良品！COACH オールドコーチ　ショルダーバッグ　バニティ　２way
+          .item-linenup_num
+            .item-linenup_price
+              ¥14,000
+            .item-linenup_font
+              = icon 'far','heart'                            
+              2
+      %section.item-linenup_box1
+        .item-linenup_photo
+          =image_tag "https://gyazo.com/34159d183616abb89c6192479ef6f398.png" 
+        .item-linenup_description
+          %h3.item-linenup__name
+            良品！COACH オールドコーチ　ショルダーバッグ　バニティ　２way
+          .item-linenup_num
+            .item-linenup_price
+              ¥14,000
+            .item-linenup_font
+              = icon 'far','heart'                            
+              2
+      %section.item-linenup_box2
+        .item-linenup_photo
+          =image_tag "https://gyazo.com/34159d183616abb89c6192479ef6f398.png" 
+        .item-linenup_description
+          %h3.item-linenup__name
+            良品！COACH オールドコーチ　ショルダーバッグ　バニティ　２way
+          .item-linenup_num
+            .item-linenup_price
+              ¥14,000
+            .item-linenup_font
+              = icon 'far','heart'                            
+              2
+      

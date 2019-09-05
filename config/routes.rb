@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'users#edit'
+  root 'items#index'
   resources :users do
     collection do
       get "logout"
     end
   end
+
   resources :cards do
     collection do
       get "add"
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get "confirmation" 
+      get 'get_image', defaults: { format: 'json' }
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
   

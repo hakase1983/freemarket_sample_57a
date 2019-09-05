@@ -1,7 +1,7 @@
 $(function(){
   $('#token_submit').on('click', function() {
     
-    Payjp.setPublicKey(ENV['PAY.JP_KEY']);
+    Payjp.setPublicKey(ENV['PAY_JP_KEY']);
     var card = {
       number: parseInt($("#a").val()),
       cvc: parseInt($("#b").val()),
