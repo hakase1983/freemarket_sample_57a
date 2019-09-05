@@ -1,4 +1,3 @@
-= render 'layouts/user_item_top-bar'
 .confirmation-single-container
   %main.confirmation-single-container__main
     .confirmation-l-single-container.buy-item-container
@@ -10,7 +9,7 @@
             = image_tag  "https://static.mercdn.net/thumb/photos/m28167667275_1.jpg?1567138930", class: "confirmation-item-image"
           %p.confirmation-buy-item-name.bold
             COACH コーチ ショルダーバッグ
-          = form_for @users,url: "https://www.mercari.com/jp/mypage/identification/save/" , html: {class: "confirmation-buy-form"} do |f|
+          = form_for @personal_info,url: "https://www.mercari.com/jp/mypage/identification/save/" , html: {class: "confirmation-buy-form"} do |f|
             %p.confirmation-buy-price-ja.bold
               ¥2,500
               %span.confirmation-item-shipping-fee.bold
@@ -57,4 +56,3 @@
               変更する
               %i.icon-arrow-right
                 = icon('fas','chevron-right')
-= render 'layouts/user_item_bottom-bar'
