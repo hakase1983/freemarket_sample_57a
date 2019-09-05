@@ -1,6 +1,6 @@
-@import "reset.scss";
+@import "_reset.scss";
 @import "vendor_prefix.scss";
-@import "color.scss";
+@import "_color.scss";
 @import "mixin.scss";
 @import 'font-awesome-sprockets';
 @import "font-awesome";
@@ -14,4 +14,14 @@
 @import "item-new.scss";
 @import "logout_view";
 @import "user-confirmation_view";
-@import "item-create.scss"
+@import "item-create.scss";
+@import "mypage_view";
+@import "./user_item_top-bar";
+@import "./user_item_bottom-bar";
+@import "./login";
+@import "./registration";
+@import "./signup-1";
+@import "./signup-2";
+@import "./signup-3";
+@import "./signup-4";
+@import "./signup-done";

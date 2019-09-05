@@ -1,0 +1,25 @@
+=render "layouts/user_item_top-bar"
+.single-container__main
+  .single-container__main__login-panel
+    .single-container__main__login-panel__no-account
+      %p アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録",new_user_registration_path
+    .single-container__main__login-panel__sns
+      %button.facebook-login
+        = icon('fab', 'facebook-square', id: 'sns-icon', class: 'facebook-icon')
+        Facebookでログイン
+      %button.google-login
+        = image_tag("https://i.gyazo.com/521380102faa759d8b5883fa037e7eb5.png", size: '30x30', class: 'google-icon')
+        Googleでログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form
+        .form__login-form
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "input-default"
+        .form__login-form
+          = f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "input-default"
+        .form__login-form
+          = image_tag("https://i.gyazo.com/f1baa0accf4fb81d6e731a571a143a92.png")
+        .actions
+          = f.submit "ログイン"
+        = link_to "パスワードをお忘れの方"
+=render "layouts/user_item_bottom-bar"

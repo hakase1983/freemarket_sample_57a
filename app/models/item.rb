@@ -18,4 +18,8 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :size
   accepts_nested_attributes_for :brand
   accepts_nested_attributes_for :delivery
+  accepts_nested_attributes_for :image
+  accepts_nested_attributes_for :category
+  accepts_nested_attributes_for :size
+  accepts_nested_attributes_for :brand
 end

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'items#index'
-  resources :users
+  resources :users do
+    collection do
+      get "logout"
+    end
+  end
   resources :cards do
     collection do
       get "add"
@@ -15,4 +20,14 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+  
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4' 
+      post 'done' 
+    end
+  end 
 end

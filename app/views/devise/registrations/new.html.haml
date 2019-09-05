@@ -1,0 +1,19 @@
+= render "layouts/user_item_top-bar"
+.main
+  .main__registration
+    .main__registration__head
+      新規会員登録
+    .main__registration__form
+      .main__registration__form__content
+        %button.email-registration
+          = icon('far', 'envelope', class: 'icon', class: 'email-icon')
+          = link_to "メールアドレスで登録する", step1_signup_index_path
+        %button.facebook-registration
+          = icon('fab', 'facebook-square', id: 'sns-icon', class: 'icon', class: 'facebook-icon')
+          Facebookでログイン
+        %button.google-registration
+          = image_tag("https://i.gyazo.com/521380102faa759d8b5883fa037e7eb5.png", size: '30x30', class: 'icon', class: 'google-icon')
+          Googleでログイン
+
+
+= render "layouts/user_item_bottom-bar"
