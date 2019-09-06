@@ -7,7 +7,7 @@
         .logout-l-single-inner
           .logout-l-single-content
             .logout-btn-default.logout-btn-red
-              ログアウト
+              =link_to "ログアウト", destroy_user_session_path, method: :delete
     = render 'layouts/l-sidebar'
 
 = link_to root_path,class: "sell-btn" do
