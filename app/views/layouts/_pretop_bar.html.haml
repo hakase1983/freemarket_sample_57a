@@ -1,0 +1,38 @@
+.default-container
+  %header.topbar
+    .topbar__inner
+      .topbar__top
+        %h1
+          = link_to root_path do
+            =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", alt: "mercari", height: "36", width: "134"
+        %form.topbar__form{action: "https://www.mercari.com/jp/search/"}
+          %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+          %i.icon-search 
+            = link_to root_path do
+              = icon 'fas', 'search'
+      .topbar-nav-box.clearfix
+        %nav.list-left
+          %ul.topbar-nav
+            %li
+              %h2
+                = link_to root_path,class: "topbar-nav__root" do
+                  %i.topbar-cat-brand-icon 
+                    = icon 'fas', 'list'
+                  %span カテゴリーから探す
+            %li
+              %h2
+                = link_to root_path,class: "topbar-nav__root" do
+                  %i.topbar-cat-brand-icon
+                    = icon 'fas', 'tag'
+                  %span ブランドから探す
+        .pre-list
+          .presignup-list
+            =link_to new_user_registration_path,class: "signup-link" do
+              新規会員登録
+          .prelogin-list
+            =link_to new_user_session_path,class: "login-link" do
+              ログイン
+= link_to new_user_registration_path,class: "sell-btn" do
+  %div 出品
+  %i.icon-camera
+    = icon "fas","camera"
