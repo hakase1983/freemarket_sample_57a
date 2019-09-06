@@ -25,11 +25,11 @@
       .main__single-container__head
         会員登録完了
 
-      = form_for @user, url: user_session_path, method: :post do |f|     
-        .submit-content
-          ありがとうございます。
-          %br
+      .submit-content
+        ありがとうございます。
+        %br
           会員登録が完了しました。
-        .submit-content
-          = f.submit "メルカリをはじめる", id: "signup-submit",class: "btn-default"
+      .submit-content
+        %button
+          = link_to "メルカリをはじめる", root_path, id: "start-mercari"
 = render 'layouts/user_item_bottom-bar'
