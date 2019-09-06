@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get "logout"
+      get "profile"
     end
   end
 
