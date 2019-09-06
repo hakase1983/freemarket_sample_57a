@@ -10,8 +10,7 @@ class CreatePersonalInfos < ActiveRecord::Migration[5.2]
       t.string :city_code,           null: false
       t.string :address_num,         null: false
       t.string :building_name
-      t.string :telephone
-      t.date :birth_day           
+      t.string :telephone    
       t.references :user,            null: false, foreign_key: true
       t.timestamps
     end
