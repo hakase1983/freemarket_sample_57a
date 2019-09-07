@@ -2,17 +2,17 @@
   .right
     .right__content
       %section.right__chapter
-        %h2.right__chapter-head
+        %h3.right__chapter-head
           プロフィール
         .profile-from
           =image_tag "https://i.gyazo.com/af34745e6f25c7fa181a0621c7f88f6f.png",class:"profile-form"
-          .profile-icon
-            =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"60", height:"60"   
+          .face_icon
+            =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"60", height:"60"
+          .profile-icon           
             = form_for @user , url: "/users/profile" do |f|
               =f.text_field :name,class:"nameplate", placeholder: "なまえ"
               .profile-comment
                 = f.text_area :profile,name: "introduction", class:"profile-field",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",width:"90",height:"100"
                 %button.btn-red{type:  "submit"} 
                   変更する
-  = render 'layouts/l-sidebar'
-
+    = render 'layouts/l-sidebar'
