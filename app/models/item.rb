@@ -5,8 +5,6 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :likes
-  has_one :seller
-  has_one :buyer
   has_one :delivery
   has_one :dealing
   has_one :image
