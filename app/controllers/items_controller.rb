@@ -1,7 +1,10 @@
 class ItemsController < ApplicationController
   def index
   end
-
+  def edit
+  end
+  def update
+  end
   def show 
     @item = Item.new
   end
@@ -28,11 +31,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    if @item.save
-      redirect_to :complete
-    else
-      render :new
-    end
+    @item.save
   end
   def complete
   end

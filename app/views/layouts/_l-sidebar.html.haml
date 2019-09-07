@@ -1,7 +1,7 @@
 .left-side
   .mypage-nav
     %ul.mypage-nav__list
-      = link_to user_path(current_user),class: "l-nav" do
+      = link_to root_path,class: "l-nav" do
         %li.mypage-nav__list__item.active
           マイページ
           = icon('fas','chevron-right', class: 'icon-arrow-right')
@@ -89,7 +89,7 @@
           %li.mypage-nav__list__item
             メール/パスワード
             = icon('fas','chevron-right', class: 'icon-arrow-right')
-        = link_to edit_user_path(current_user),class: "l-nav" do
+        = link_to root_path,class: "l-nav" do
           %li.mypage-nav__list__item
             本人情報
             = icon('fas','chevron-right', class: 'icon-arrow-right')

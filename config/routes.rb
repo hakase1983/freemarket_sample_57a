@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :cards do
     collection do
+      get "payment"
       get "add"
       get "registration_card"
     end

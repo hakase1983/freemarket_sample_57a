@@ -1,3 +1,4 @@
+= render 'layouts/user_item_top-bar'
 %main.single__main
   %section.single__container
     #sell__container
@@ -5,7 +6,8 @@
         %h2.single__head
           商品の情報を入力
         .sell__form
-          =form_for @item do |f|
+          =form_for(@item, data: { remote: true }) do |f|
+            = render 'layouts/error_messages', model: f.object
             .sell__image-box
               %h3.sell__image-head
                 出品画像
@@ -152,3 +154,4 @@
                 に同意したことになります。
               =f.submit "出品する",class: "btn-default-red",id: "item-submit"
               =link_to "もどる",root_path,class: "btn-default-gray"
+= render 'layouts/user_item_bottom-bar'
