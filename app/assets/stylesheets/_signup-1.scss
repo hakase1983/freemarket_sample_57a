@@ -240,7 +240,7 @@ p{
   color: #0099e8;
 }
 
-.btn-default{
+.btn-default-signup{
   margin-top: 32px;
   background: #ea352d;
   border: 1px solid #ea352d;
@@ -249,8 +249,11 @@ p{
   line-height: 48px;
   font-size: 14px;
   text-align: center;
+  input{
+    color: white;
+  }
   a{
-    color:white;
+    color: white;
   }
 }
 .information-text{
