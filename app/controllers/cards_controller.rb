@@ -6,9 +6,7 @@ class CardsController < ApplicationController
   def add
   end
   def new
-    # カードの登録画面。送信ボタンを押すとcreateアクションへ。
-    # card = Card.where(user_id: current_user.id).first
-    # redirect_to action: "new" if card.present?
+    render layout: "compact"
   end
 
  # indexアクションはここでは省略
@@ -38,6 +36,4 @@ class CardsController < ApplicationController
     # @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 
-  def registration_card
-  end
 end
