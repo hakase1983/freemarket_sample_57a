@@ -26,7 +26,7 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to completed_signup_index_path
     else
-      redirect_to action: "create"
+      render :add
     end
   end
 
