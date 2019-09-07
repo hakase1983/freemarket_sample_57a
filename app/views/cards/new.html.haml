@@ -24,9 +24,9 @@
   .right-content
     .right-chapter-container
       .content__title
-        %h2 支払い方法
+        %h2 クレジットカード情報入力
       .content__credit-card
-        = form_with url: done_signup_index_path do |f|  
+        = form_with url: cards_path, method: :post, html: { name: "inputForm" },class: "card-form" do |f|  
           .card-form__content
             .form-group
               %label
@@ -76,6 +76,6 @@
                 .signup-text
                   %span.form-question ?
                   カード裏面の番号とは？
-                %button.btn-default
-                  = link_to "追加する", done_signup_index_path
+                .content-bottom#card_token
+              = f.submit '追加する', class: 'btn-default-red', id: 'token_submit'
 = render 'layouts/user_item_bottom-bar'
