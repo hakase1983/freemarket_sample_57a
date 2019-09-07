@@ -7,7 +7,6 @@
           商品の情報を入力
         .sell__form
           =form_for(@item, data: { remote: true }) do |f|
-            = render 'layouts/error_messages', model: f.object
             .sell__image-box
               %h3.sell__image-head
                 出品画像

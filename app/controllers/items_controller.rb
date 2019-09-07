@@ -31,7 +31,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    @item.save
+    if @item.save
+      redirect_to "/items/complete"
+    else
+      render :new
+    end
   end
   def complete
   end
