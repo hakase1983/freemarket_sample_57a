@@ -98,6 +98,9 @@ button{
           margin: 16px 0 0;
           background: #385185;
           color: #fff;
+          a{
+            color: white;
+          }
           .facebook-icon{
             display: inline-block;
             font-style: normal;
@@ -119,6 +122,9 @@ button{
           margin: 16px 0 0;
           border: #979797 solid 1px;
           color: #333;
+          a{
+            color: black;
+          }
           .google-icon{
             position: absolute;
             left: 15px;

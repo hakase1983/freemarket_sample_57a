@@ -2,18 +2,18 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   layout "compact"
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  
+  def create
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
-
-  # POST /resource
-  # def create
-  #   super
-  # end
+    if !params[:user][:password] 
+      params[:user][:password] = Devise.friendly_token.first(6) #deviseのパスワード自動生成機能を使用
+      params[:user][:password_confirmation] = params[:user][:password]
+      super
+      sns = SnsCredential.update(user_id:  @user.id)
+    else #email登録なら
+      super
+    end
+  end
 
   # GET /resource/edit
   # def edit
