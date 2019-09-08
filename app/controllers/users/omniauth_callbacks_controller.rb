@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+  layout "compact"
+  
   def facebook
     callback_for(:facebook) 
   end
