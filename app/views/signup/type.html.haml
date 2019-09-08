@@ -10,10 +10,10 @@
           = link_to "メールアドレスで登録する", new_user_registration_path
         %button.facebook-registration
           = icon('fab', 'facebook-square', id: 'sns-icon', class: 'icon', class: 'facebook-icon')
-          Facebookでログイン
+          = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
         %button.google-registration
           = image_tag("https://i.gyazo.com/521380102faa759d8b5883fa037e7eb5.png", size: '30x30', class: 'icon', class: 'google-icon')
-          Googleでログイン
+          = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path
 
 
 = render "layouts/user_item_bottom-bar"
