@@ -21,7 +21,7 @@
       .item-main-content.clearfix
         .item-detail-photo
           .owl-item-inner.is-higher-width
-            %img.owl-lazy{:alt => "aa", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", :src => "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", :style => "opacity: 1;"}/
+            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", src: "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", style:  "opacity: 1;"
         %table.item-detail-table
           %tbody
             %tr
@@ -81,14 +81,3 @@
       =link_to "#item-delete-popup",id: "delete-button" do
         %button.detail-btn-default-gray
           この商品を削除する
-    .item-detail-message
-      .message-container
-        .message-content
-          %form.message-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
-            %input{:name => "__csrf_value", :type => "hidden", :value => "e298c907bb52c52be8b0b205d671b6b3681c906bfd8084a8f26f0bfb973a226bb895dc3cc74e67b25bb79552b48f3dc2cf7aa809cd147b2ad8d2e0bc91950cb9f"}/
-            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %input{:name => "item_id", :type => "hidden", :value => "m17660058493"}/
-            %input{:name => "redirect_url_key", :type => "hidden", :value => "items_show"}/
-            %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
-            %button.message-submit.detail-btn-default-gray{:type => "submit"}
-              %span コメントする

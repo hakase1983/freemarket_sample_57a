@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
   end
   def edit
@@ -38,8 +39,8 @@ class ItemsController < ApplicationController
     end
   end
   def destroy
-    item = Item.find(params[:id])
-    item.destroy if item.user_id== current_user.id
+    set_item
+    @item.destroy if @item.user_id== current_user.id
     redirect_to user_path(current_user)
   end
   def complete
@@ -51,6 +52,10 @@ class ItemsController < ApplicationController
 
   def sellingitem
     @items = Item.where(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def item_params
