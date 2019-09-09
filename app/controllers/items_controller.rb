@@ -37,9 +37,22 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy if item.user_id== current_user.id
+    redirect_to user_path(current_user)
+  end
   def complete
   end
- 
+  
+  def detail
+    @item = Item.find(params[:id])
+  end
+
+  def sellingitem
+    @items = Item.where(user_id: current_user.id)
+  end
+
   def item_params
     params.require(:item).permit(:name,:description,:category_id,:condition,:price,image_attributes: [:image1,:image2,:id],size_attributes: [:id,:name],brand_attributes: [:id,:name],delivery_attributes: [:id,:fee,:area,:delivery_days])
   end

@@ -1,6 +1,6 @@
 $(function(){
-  $('#token_submit').on('click', function() {
-    
+  $('#token_submit').on('click', function(e) {
+    e.preventDefault();
     Payjp.setPublicKey('pk_test_0a0a49e31db4fc41da70e36b');
     var card = {
       number: parseInt($("#a").val()),

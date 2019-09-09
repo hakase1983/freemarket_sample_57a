@@ -1,0 +1,94 @@
+#item-delete-layer
+#item-delete-popup
+  .confirm-box
+    %h2
+      確認
+    %p
+      削除すると二度と復活できません。
+    %p
+      本当に削除しますか？
+    .confirm-lists
+      .close-item-delete-popup
+        %span
+          キャンセル
+      =link_to item_path,method: :delete ,class: "delete-link" do
+        %span
+          削除する
+.container.clearfix
+  .right-content
+    %section.item-detail-container
+      %h2.item-name aa
+      .item-main-content.clearfix
+        .item-detail-photo
+          .owl-item-inner.is-higher-width
+            %img.owl-lazy{:alt => "aa", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", :src => "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", :style => "opacity: 1;"}/
+        %table.item-detail-table
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                =link_to root_path do
+                  aaa
+                %div
+            %tr
+              %th カテゴリー
+              %td
+                =link_to root_path do
+                  %div レディース
+                =link_to root_path do
+                  .item-detail-table-sub-category
+                    %i.icon-arrow-right
+                    ジャケット/アウター
+                =link_to root_path do
+                  .item-detail-table-sub-sub-category
+                    %i.icon-arrow-right
+                    Gジャン/デニムジャケット
+            %tr
+              %th ブランド
+              %td
+            %tr
+              %th 商品のサイズ
+              %td XS(SS)
+            %tr
+              %th 商品の状態
+              %td 未使用に近い
+            %tr
+              %th 配送料の負担
+              %td 着払い(購入者負担)
+            %tr
+              %th 配送の方法
+              %td ゆうパック
+            %tr
+              %th 配送元地域
+              %td
+                =link_to root_path do
+                  岩手県
+            %tr
+              %th 発送日の目安
+              %td 1~2日で発送
+      .item-price-box.text-center
+        %span.item-price.bold ¥2,121
+        %span （税込）
+        %span.item-shipping-fee 着払い
+      .item-description.f14
+        %p.item-description-inner aa
+    .listing-item-change-box
+      =link_to root_path do
+        .btn-default-red
+          商品の編集
+      %p.text-center or
+      %button.detail-btn-default-gray{type: "submit"} 出品を一旦停止する
+      =link_to "#item-delete-popup",id: "delete-button" do
+        %button.detail-btn-default-gray
+          この商品を削除する
+    .item-detail-message
+      .message-container
+        .message-content
+          %form.message-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
+            %input{:name => "__csrf_value", :type => "hidden", :value => "e298c907bb52c52be8b0b205d671b6b3681c906bfd8084a8f26f0bfb973a226bb895dc3cc74e67b25bb79552b48f3dc2cf7aa809cd147b2ad8d2e0bc91950cb9f"}/
+            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %input{:name => "item_id", :type => "hidden", :value => "m17660058493"}/
+            %input{:name => "redirect_url_key", :type => "hidden", :value => "items_show"}/
+            %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+            %button.message-submit.detail-btn-default-gray{:type => "submit"}
+              %span コメントする
