@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   before_action :set_item,except:[:index,:edit,:update,:new,:show,:comfirmation,:create,:sellingitem]
   def index
+    @items = Item.includes(:user)
   end
   def edit
   end
