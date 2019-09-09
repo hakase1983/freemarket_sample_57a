@@ -1,15 +1,15 @@
 class Item < ApplicationRecord
   belongs_to :user
   belongs_to :brand
-  has_one :size
+  has_one :size, dependent: :destroy
   belongs_to :category
   has_many :comments
   has_many :likes
   has_one :seller
   has_one :buyer
-  has_one :delivery
+  has_one :delivery, dependent: :destroy
   has_one :dealing
-  has_one :image
+  has_one :image, dependent: :destroy
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User"
 
