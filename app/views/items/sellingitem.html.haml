@@ -21,26 +21,28 @@
                 売却済み
       .tab-content
         %ul.selling-item-list
-          %li.selling-items-box
-            出品中の商品がありません
-          - @items.each do |item|
-            =link_to detail_item_path(item.id),class: "mypage-item-link" do
-              %figure
-                .is-higher-width.lazyloaded
-                  = image_tag item.image.image1.url
-              .mypage-item-body.show-stock-item
-                .mypage-item-text
-                  = item.name
-                %div
-                  %span.listing-item-count
-                    %i.icon-like-border
-                    = icon "far", "heart"
-                    %span 0
-                  %span.listing-item-count
-                    %i.icon-message
-                    = icon "far", "comment-alt"
-                    %span 0
-                  .mypage-item-status.bold.awaiting
-                    出品中
+          - if @items.present?
+            - @items.each do |item|
+              =link_to detail_item_path(item.id),class: "mypage-item-link" do
+                %figure
+                  .is-higher-width.lazyloaded
+                    = image_tag item.image.image1.url
+                .mypage-item-body.show-stock-item
+                  .mypage-item-text
+                    = item.name
+                  %div
+                    %span.listing-item-count
+                      %i.icon-like-border
+                      = icon "far", "heart"
+                      %span 0
+                    %span.listing-item-count
+                      %i.icon-message
+                      = icon "far", "comment-alt"
+                      %span 0
+                    .mypage-item-status.bold.awaiting
+                      出品中
+          - else
+            %li.selling-items-box
+              出品中の商品がありません
 
   = render 'layouts/l-sidebar'
