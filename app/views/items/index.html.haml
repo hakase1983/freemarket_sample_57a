@@ -10,22 +10,7 @@
           アイテム
 
       .item-box-content.clearfix
-        - @items.each do |item|
-          %section.item-box
-            = link_to item_path(item.id) do
-              .item-box__photo
-                = image_tag item.image.image1.url , class: 'item-image'
-              .item-box__body
-                %h3.item-box__name
-                  =item.name
-                .item-box__num
-                  .item-box__price
-                    = "¥#{item.price.to_s(:delimited)}"
-                  .like-border
-                  %i.icon-like-border
-                    = icon 'far', 'heart'
-                    %span
-                      8
+        = render partial: 'item', collection: @items
 
       .view-all
         = link_to root_path do
