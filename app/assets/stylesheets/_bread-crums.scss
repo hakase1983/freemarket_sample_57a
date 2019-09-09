@@ -1,4 +1,4 @@
-.bread-crums{
+.bread-crums-list{
   position: relative;
   border-top: 1px solid #eee;
   background: #f5f5f5;
@@ -11,16 +11,20 @@
     overflow: visible;
     width: 1020px;
     margin: 0 auto;
+    font-size: 14px;
     padding: 16px 0;
     white-space: normal;
+    font-weight: 600;
     a{
       text-decoration: none;
       color: black;
+      font-weight: 600;
     }
     .bread-crums-list{
       display: inline-block;
       font-size: 14px;
       line-height: 1.2;
+      font-weight: 600;
     }
     .li-last-child{
       font-weight: 600;
