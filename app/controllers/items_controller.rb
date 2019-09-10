@@ -7,12 +7,15 @@ class ItemsController < ApplicationController
   def index
     @items = Item.includes(:user)
   end
+
   def edit
   end
+  
   def update
   end
+
   def show 
-    @item = Item.new
+    @item = Item.find(params[:id])
   end
 
 
