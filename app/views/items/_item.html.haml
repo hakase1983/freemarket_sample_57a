@@ -1,5 +1,5 @@
 %section.item-box
-  = link_to item_path(item) do
+  = link_to item_path(item.id) do
     .item-box__photo
       = image_tag item.image.image1.url , class: 'item-image'
     .item-box__body
