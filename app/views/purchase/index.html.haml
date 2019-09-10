@@ -25,7 +25,7 @@
                   支払い金額
                 .buy-price-table__row__cell
                   %span
-                    ¥2,500
+                    = "¥#{@item.price.to_s(:delimited)}"
             %p.has-error-text
               配送先と支払い方法の入力を完了してください。
             = form_tag(action: :pay, method: :post) do
