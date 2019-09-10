@@ -10,8 +10,9 @@
             = image_tag @item.image.image1.url, class: "confirmation-item-image"
           %p.confirmation-buy-item-name.bold
             = @item.name
+          .confirmation-buy-form
             %p.confirmation-buy-price-ja.bold
-              = @item.price
+              = "¥#{@item.price.to_s(:delimited)}"
               %span.confirmation-item-shipping-fee.bold
                 送料込み
             %ul.confirmation-buy-accordion.not-have
@@ -30,23 +31,24 @@
             = form_tag(action: :pay, method: :post) do
               %button.confirmation-btn-default
                 購入する 
-                
+
       %section.buy-content.buy-user-info
         .buy-content-inner-address
           %h3.buy-content-inner-title
             配送先
           %address.buy-user-info-text
-            〒333-0000
+            = "〒#{@personal_info.postal_code}"
           %br
-            大阪府 大阪市AAA区9-2-222
+            = "#{@personal_info.prefecture_code} #{@personal_info.city_code} #{@personal_info.address_num} #{@personal_info.building_name}"
           %br
-            田中 太郎
+            = "#{@personal_info.family_name} #{@personal_info.first_name}"
           %p.buy-user-info-text
           = link_to "/users/#{current_user.id}/edit" ,class: "buy-user-info-fix" do
             %span
               変更する
               %i.icon-arrow-right
                 = icon('fas','chevron-right')
+
       %section.buy-content.buy-user-info
         .buy-content-inner-pay
           %h3.buy-content-inner-title
