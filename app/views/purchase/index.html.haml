@@ -7,7 +7,7 @@
       %section.confirmation-buy-content.confirmation-buy-item
         .confirmation-buy-content-inner
           %h3.buy-item-image
-            = image_tag @item.image.image1.url, class: "confirmation-item-image"
+            = image_tag @item.images.first.name.url, class: "confirmation-item-image"
           %p.confirmation-buy-item-name.bold
             = @item.name
           .confirmation-buy-form

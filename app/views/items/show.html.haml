@@ -5,28 +5,11 @@
     .item__main-content.clearfix
       .item__photo
         .item__photo_main
-          = image_tag @item.image.image1.url,class:"item__photo_main"
+          = image_tag @item.images.first.name.url,class:"item__photo_main"
         .item__photo_detail
-          .item__photo_detail_one
-            = image_tag @item.image.image1.url,class:"item__photo_detail_one"  
-          .item__photo_detail_two
-            = image_tag @item.image.image2.url,class:"item__photo_detail_two" if @item.image.image2.present?
-          .item__photo_detail_three
-            = image_tag @item.image.image3.url,class:"item__photo_detail_three" if @item.image.image3.present?
-          .item__photo_detail_four
-            = image_tag @item.image.image4.url,class:"item__photo_detail_four"  if @item.image.image4.present?
-          .item__photo_detail_five
-            = image_tag @item.image.image5.url,class:"item__photo_detail_five"  if @item.image.image5.present?
-          .item__photo_detail_six
-            = image_tag @item.image.image6.url,class:"item__photo_detail_six" if @item.image.image6.present?
-          .item__photo_detail_seven
-            = image_tag @item.image.image7.url,class:"item__photo_detail_seven" if @item.image.image7.present?
-          .item__photo_detail_eight
-            = image_tag @item.image.image8.url,class:"item__photo_detail_eight" if @item.image.image8.present?
-          .item__photo_detail_nine
-            = image_tag @item.image.image9.url,class:"item__photo_detail_nine"  if @item.image.image9.present?
-          .item__photo_detail_ten
-            = image_tag @item.image.image10.url,class:"item__photo_detail_ten"  if @item.image.image10.present?
+          - @item.images.each do |img|
+            .item__photo_detail_one
+              = image_tag img.name.url,class:"item__photo_detail_ten" 
       %table.item__detail
         .table
           %tr.table__one
