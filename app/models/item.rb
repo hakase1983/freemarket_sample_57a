@@ -9,12 +9,12 @@ class Item < ApplicationRecord
   has_one :buyer
   has_one :delivery, dependent: :destroy
   has_one :dealing
-  has_one :image, dependent: :destroy
+  has_many :images, dependent: :destroy
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User"
 
 
-  accepts_nested_attributes_for :image
+  accepts_nested_attributes_for :images
   accepts_nested_attributes_for :size
   accepts_nested_attributes_for :brand
   accepts_nested_attributes_for :delivery

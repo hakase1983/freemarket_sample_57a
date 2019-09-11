@@ -36,6 +36,8 @@ Rails.application.routes.draw do
       get 'get_image', defaults: { format: 'json' }
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get '/:id/edit/get_category_children', to: 'items#edit_get_category_children', defaults: { format: 'json' }
+      get '/:id/edit/get_category_grandchildren', to: 'items#edit_get_category_grandchildren', defaults: { format: 'json' }
     end
   end
   
