@@ -27,8 +27,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
   end
-
-
+  
   def confirmation
     @personal_info = PersonalInfo.new
     render layout: 'compact'
