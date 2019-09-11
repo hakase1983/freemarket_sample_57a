@@ -5,7 +5,9 @@ class ItemsController < ApplicationController
 
   before_action :set_item,except:[:index,:new,:show,:comfirmation,:create,:sellingitem,:complete,:get_category_children,:get_category_grandchildren,:edit_get_category_children,:edit_get_category_grandchildren]
   def index
+    @items = Item.includes(:user)
   end
+
   def edit
     @category = ["---"]#データベースから、親カテゴリーのみ抽出し、配列化
       Category.where(ancestry: nil).each do |parent|
@@ -13,14 +15,16 @@ class ItemsController < ApplicationController
       end
     render layout: 'compact'
   end
+  
   def update
     if @item.user_id==current_user.id
       @item.update(item_params)
       redirect_to detail_item_path(@item.id)
     end
   end
+
   def show 
-    @item = Item.new
+    @item = Item.find(params[:id])
   end
 
 
