@@ -10,8 +10,8 @@ class ItemsController < ApplicationController
 
   def edit
     @category = ["---"]#データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-         @category << parent.name
+      Category.where(ancestry: nil).pluck(:name).each do |parent|
+         @category << parent
       end
     render layout: 'compact'
   end
@@ -35,8 +35,8 @@ class ItemsController < ApplicationController
 
   def new
     @category = ["---"]#データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-         @category << parent.name
+      Category.where(ancestry: nil).pluck(:name).each do |parent|
+         @category << parent
       end
     @item = Item.new
     @item.images.build
