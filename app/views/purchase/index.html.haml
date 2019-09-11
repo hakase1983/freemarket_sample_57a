@@ -1,3 +1,4 @@
+=render "layouts/user_item_top-bar"
 .confirmation-single-container
   %main.confirmation-single-container__main
     .confirmation-l-single-container.buy-item-container
@@ -6,12 +7,12 @@
       %section.confirmation-buy-content.confirmation-buy-item
         .confirmation-buy-content-inner
           %h3.buy-item-image
-            = image_tag  "https://static.mercdn.net/thumb/photos/m28167667275_1.jpg?1567138930", class: "confirmation-item-image"
+            = image_tag @item.image.image1.url, class: "confirmation-item-image"
           %p.confirmation-buy-item-name.bold
-            COACH コーチ ショルダーバッグ
-          = form_for @personal_info,url: "https://www.mercari.com/jp/mypage/identification/save/" , html: {class: "confirmation-buy-form"} do |f|
+            = @item.name
+          .confirmation-buy-form
             %p.confirmation-buy-price-ja.bold
-              ¥2,500
+              = "¥#{@item.price.to_s(:delimited)}"
               %span.confirmation-item-shipping-fee.bold
                 送料込み
             %ul.confirmation-buy-accordion.not-have
@@ -24,35 +25,46 @@
                   支払い金額
                 .buy-price-table__row__cell
                   %span
-                    ¥2,500
+                    = "¥#{@item.price.to_s(:delimited)}"
             %p.has-error-text
               配送先と支払い方法の入力を完了してください。
-            = f.submit "購入する" ,class:"confirmation-btn-default"
+            = form_tag(action: :pay, method: :post) do
+              %button.confirmation-btn-default
+                購入する 
+
       %section.buy-content.buy-user-info
         .buy-content-inner-address
           %h3.buy-content-inner-title
             配送先
           %address.buy-user-info-text
-            〒333-0000
+            = "〒#{@personal_info.postal_code}"
           %br
-            大阪府 大阪市AAA区9-2-222
+            = "#{@personal_info.prefecture_code} #{@personal_info.city_code} #{@personal_info.address_num} #{@personal_info.building_name}"
           %br
-            田中 太郎
+            = "#{@personal_info.family_name} #{@personal_info.first_name}"
           %p.buy-user-info-text
-          = link_to root_path ,class: "buy-user-info-fix" do
+          = link_to "/users/#{current_user.id}/edit" ,class: "buy-user-info-fix" do
             %span
               変更する
               %i.icon-arrow-right
                 = icon('fas','chevron-right')
+
       %section.buy-content.buy-user-info
         .buy-content-inner-pay
           %h3.buy-content-inner-title
             支払い方法
           %p.buy-user-info-text
-            %br
-              &#047;
-          = link_to root_path ,class: "buy-user-info-fix-pay" do
+            - if @default_card_information.blank?
+              %br /
+            - else
+              -#以下カード情報を表示
+              = "**** **** **** " + @default_card_information.last4
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+          = link_to add_cards_path ,class: "buy-user-info-fix-pay" do
             %span
               変更する
               %i.icon-arrow-right
                 = icon('fas','chevron-right')
+=render "layouts/user_item_bottom-bar"

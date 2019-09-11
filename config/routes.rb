@@ -26,12 +26,21 @@ Rails.application.routes.draw do
   end
   
   resources :items do
+    member do
+      get "detail"
+    end
     collection do
-      get "confirmation" 
       get "complete"
+      get "sellingitem"
       get 'get_image', defaults: { format: 'json' }
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'purchase_done', to: 'purchase#purchase_done'
+      end
     end
   end
   
@@ -42,5 +51,6 @@ Rails.application.routes.draw do
       get 'completed' 
     end
   end 
+  
 
 end

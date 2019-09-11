@@ -1,0 +1,48 @@
+.container.clearfix
+  .right-content
+    %section.selling-tab-container
+      %h2.selling-tab-head
+        出品した商品
+      %ul.selling-tabs
+        %li.now
+          =link_to sellingitem_items_path do
+            %h3
+              .selling-continue-tab1
+                出品中
+        %li.past
+          =link_to sellingitem_items_path do
+            %h3
+              .selling-end-tab2
+                取引中
+        %li.past
+          =link_to sellingitem_items_path do
+            %h3
+              .selling-end-tab2
+                売却済み
+      .tab-content
+        %ul.selling-item-list
+          - if @items.present?
+            - @items.each do |item|
+              =link_to detail_item_path(item.id),class: "mypage-item-link" do
+                %figure
+                  .is-higher-width.lazyloaded
+                    = image_tag item.image.image1.url
+                .mypage-item-body.show-stock-item
+                  .mypage-item-text
+                    = item.name
+                  %div
+                    %span.listing-item-count
+                      %i.icon-like-border
+                      = icon "far", "heart"
+                      %span 0
+                    %span.listing-item-count
+                      %i.icon-message
+                      = icon "far", "comment-alt"
+                      %span 0
+                    .mypage-item-status.bold.awaiting
+                      出品中
+          - else
+            %li.selling-items-box
+              出品中の商品がありません
+
+  = render 'layouts/l-sidebar'
