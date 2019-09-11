@@ -10,7 +10,7 @@ class Item < ApplicationRecord
   has_one :delivery
   has_one :dealing
   has_one :image
-  belongs_to :saler, class_name: "User"
+  belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User"
 
 

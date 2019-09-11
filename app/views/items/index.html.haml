@@ -8,68 +8,13 @@
       %h3.text-center
         = link_to root_path do
           アイテム
+
       .item-box-content.clearfix
-        %section.item-box
-          = link_to "/items/:id" do
-            .item-box__photo
-              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m32290864405_1.jpg?1566781077",class:"item-image"
-            .item-box__body
-              %h3.item-box__name
-                アディダスのジャージのズボン　black simpleかっこいい
-              .item-box__num
-                .item-box__price
-                  ¥7,000
-                .like-border
-                %i.icon-like-border
-                  = icon 'far', 'heart'
-                  %span
-                    8
-        %section.item-box
-          = link_to root_path do
-            .item-box__photo
-              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m32290864405_1.jpg?1566781077",class:"item-image"
-            .item-box__body
-              %h3.item-box__name
-                アディダスのジャージのズボン　black simpleかっこいい
-              .item-box__num
-                .item-box__price
-                  ¥7,000
-                .like-border
-                %i.icon-like-border
-                  = icon 'far', 'heart'
-                  %span
-                    8
-        %section.item-box
-          = link_to root_path do
-            .item-box__photo
-              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m32290864405_1.jpg?1566781077",class:"item-image"
-            .item-box__body
-              %h3.item-box__name
-                アディダスのジャージのズボン　black simpleかっこいい
-              .item-box__num
-                .item-box__price
-                  ¥7,000
-                .like-border
-                %i.icon-like-border
-                  = icon 'far', 'heart'
-                  %span
-                    8
-        %section.item-box
-          = link_to root_path do
-            .item-box__photo
-              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m32290864405_1.jpg?1566781077",class:"item-image"
-            .item-box__body
-              %h3.item-box__name
-                アディダスのジャージのズボン　black simpleかっこいい
-              .item-box__num
-                .item-box__price
-                  ¥7,000
-                .like-border
-                %i.icon-like-border
-                  = icon 'far', 'heart'
-                  %span
-                    8
+        = render @items
+
       .view-all
         = link_to root_path do
           すべての商品を見る
+
+
 
