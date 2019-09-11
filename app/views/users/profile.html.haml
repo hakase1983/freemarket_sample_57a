@@ -11,7 +11,7 @@
           .face_icon
             =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"60", height:"60"
           .profile-icon           
-            = form_for @user , url: "/users/profile" do |f|
+            = form_for @user.name , url: "/users/profile" do |f|
               =f.text_field :name,class:"nameplate", placeholder: "なまえ"
               .profile-comment
                 = f.text_area :profile,name: "introduction", class:"profile-field",placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",width:"90",height:"100"

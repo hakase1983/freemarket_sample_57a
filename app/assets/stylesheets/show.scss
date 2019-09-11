@@ -45,54 +45,54 @@ body{
     display: inline-block;
   }
     .item__photo_detail_one{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
       border-collapse: collapse;
     }
     .item__photo_detail_two{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
       border-collapse: collapse;
     }
     .item__photo_detail_three{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_four{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_five{
-      width: 50px;
+      width: 64px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_six{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_seven{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_eight{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_nine{
-      width: 57px;
+      width: 65px;
       height: 55px;
       display: inline-block;
     }
     .item__photo_detail_ten{
-      width: 50px;
+      width: 64px;
       height: 55px;
       display: inline-block;
     }
@@ -434,7 +434,7 @@ body{
   .other-item-profile{
     width: 780px;
     height:700px;
-    margin: 0 auto;
+    margin: 50px auto;
   }
   .other-item-head{
     width: 780px;
@@ -443,47 +443,44 @@ body{
     color: #0099e8;
   }
   .item-linenup{
-    &_box1{
+    width: 780px;
+    height: 770px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .item-linenup_box1{
       display: inline-block;
       width: 220px;
-      margin: 0 55px 30px 0;
+      padding: 18px;
     }
-    &_box2{
-      display: inline-block;
-      width: 220px;
-      margin: 0 0 30px 0;
-    }
-    &_photo{
+    .linenup_photo1{
       width: 220px;
       height: 220px;
     }
-    &_description{
-      padding: 16px;
+    .item-linenup_description1{
       height: 110px;
+      width: 220px;
       background-color: #fff;
     }
-    &__name{
+    .item-linenup__name1{
       overflow: hidden;
       position: relative;
       height: 3em;
-      line-height: 1.5;
+      line-height: 3;
+      padding: 10px;
       font-size: 16px;
       color: #333;
     }
-    &_num{
-      margin: 8px 0 0;
-    }
-    &_price{
+    .item-linenup_price1{
       float: left;
       font-size: 17px;
       font-weight: 600;
+      padding: 10px;
       color: #333;
     }
-    &_font{
+    .item-linenup_font1{
       float: right;
       font-size: 17px;
       font-weight: 600;
+      padding: 10px;
       color: #333;
     }
-
-  }
