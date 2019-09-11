@@ -12,9 +12,9 @@ $(function(){
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
     inputs.push($(this));
-    var topHtml = $(`<li class="sell-upload-item" id="a"><figure class="sell-upload-figure">`)
+    var topHtml = $(`<li class="sell-upload-item" id="a">`)
+    var img = $(`<figure class="sell-upload-figure"><img class= "preview  width= "114px" height= "85px"></figure>`);
     topHtml.append(img);
-    var img = $(`<div class= "img_view"><img></div>`);
     reader.onload = function(e) {
       var btn_wrapper = $(`<div class="sell-upload-button"><div class="sell-upload-edit">編集</div><a class="image-delete">削除</a></div>`);
       topHtml.append(btn_wrapper);
