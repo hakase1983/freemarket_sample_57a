@@ -25,9 +25,9 @@
             - @items.each do |item|
               =link_to detail_item_path(item.id),class: "mypage-item-link" do
                 %figure
-                  - item.images.each do |img|
-                    .is-higher-width.lazyloaded
-                      = image_tag img.name.url
+                  
+                  .is-higher-width.lazyloaded
+                    = image_tag item.images.first.name.url
                 .mypage-item-body.show-stock-item
                   .mypage-item-text
                     = item.name
