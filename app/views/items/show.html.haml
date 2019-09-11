@@ -117,7 +117,7 @@
         -if item != @item
           %section.item-linenup_box1
             .item-linenup_photo
-            = image_tag item.image.image1.url,class:"linenup_photo1"
+            = image_tag item.images.first.name.url,class:"linenup_photo1"
             .item-linenup_description1
               %h3.item-linenup__name1
                 = item.name
