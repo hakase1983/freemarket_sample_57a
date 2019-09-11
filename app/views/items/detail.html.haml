@@ -17,63 +17,71 @@
 .container.clearfix
   .right-content
     %section.item-detail-container
-      %h2.item-name aa
+      %h2.item-name 
+        =@item.name
       .item-main-content.clearfix
         .item-detail-photo
-          .owl-item-inner.is-higher-width
-            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", src: "https://static.mercdn.net/item/detail/orig/photos/m17660058493_1.jpg?1567916510", style:  "opacity: 1;"
+          - @item.images.each do |img|
+            .owl-item-inner.is-higher-width
+              =image_tag img.name.url
         %table.item-detail-table
           %tbody
             %tr
               %th 出品者
               %td
                 =link_to root_path do
-                  aaa
+                  =@item.user.name
                 %div
             %tr
               %th カテゴリー
               %td
                 =link_to root_path do
-                  %div レディース
+                  %div
+                    =@item.category.parent.parent.name
                 =link_to root_path do
                   .item-detail-table-sub-category
                     %i.icon-arrow-right
-                    ジャケット/アウター
+                      =@item.category.parent.name
                 =link_to root_path do
                   .item-detail-table-sub-sub-category
                     %i.icon-arrow-right
-                    Gジャン/デニムジャケット
+                      =@item.category.name
             %tr
               %th ブランド
               %td
+                =@item.brand.name
             %tr
               %th 商品のサイズ
-              %td XS(SS)
+              %td 
+                =@item.size.name
             %tr
               %th 商品の状態
-              %td 未使用に近い
+              %td 
+                =@item.condition
             %tr
               %th 配送料の負担
-              %td 着払い(購入者負担)
-            %tr
-              %th 配送の方法
-              %td ゆうパック
+              %td 
+                =@item.delivery.fee
             %tr
               %th 配送元地域
               %td
                 =link_to root_path do
-                  岩手県
+                  =@item.delivery.area
             %tr
               %th 発送日の目安
-              %td 1~2日で発送
+              %td 
+                =@item.delivery.delivery_days
       .item-price-box.text-center
-        %span.item-price.bold ¥2,121
+        %span.item-price.bold
+          =@item.price
         %span （税込）
-        %span.item-shipping-fee 着払い
+        %span.item-shipping-fee
+          =@item.delivery.fee
       .item-description.f14
-        %p.item-description-inner aa
+        %p.item-description-inner
+          =@item.description
     .listing-item-change-box
-      =link_to root_path do
+      =link_to edit_item_path do
         .btn-default-red
           商品の編集
       %p.text-center or

@@ -59,77 +59,8 @@ select {
     color: rgb(51, 51, 51);
     font-weight:600;
   }
-  &__image-container{
-    display: block;
-    width: 620px;
-    margin: 16px auto 0;
-  }
-  &__image-container::after{
-    @include clearfix;
-  }
   &__image-uploadbox{
 
-  }
-  &__image-dropbox0{
-    width: 100%;
-    margin-left: 0;
-    float: right;
-    padding: 40px;
-    position: relative;
-    min-height: 162px;
-    background: #f5f5f5;
-    border: 1px dashed #ccc;
-    font-size: 0;
-    text-align: center;
-    box-sizing:border-box;
-    cursor: pointer;
-    @include transition;
-  }
-  &__image-dropbox0 pre {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    right: 16px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.5;
-    pointer-events: none;
-
-    word-wrap: break-word;
-    @include transform;
-    font-weight:600;
-    color: rgb(51, 51, 51);
-  }
-  &__image-dropbox1{
-    width: 78%;
-    margin-left: 0;
-    float: right;
-    padding: 40px;
-    position: relative;
-    min-height: 162px;
-    background: #f5f5f5;
-    border: 1px dashed #ccc;
-    font-size: 0;
-    text-align: center;
-    box-sizing:border-box;
-    cursor: pointer;
-    @include transition;
-    margin-left: 2%;
-  }
-  &__image-dropbox1 pre {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    right: 16px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.5;
-    pointer-events: none;
-
-    word-wrap: break-word;
-    @include transform;
-    font-weight:600;
-    color: rgb(51, 51, 51);
   }
   &__content{
     padding: 40px;
@@ -158,6 +89,52 @@ select {
     padding: 24px 0;
     border-top: 1px solid #ccc;
   }
+}
+.dropzone-container{
+  display: block;
+  width: 620px;
+  margin: 16px auto 0;
+}
+.dropzone-container::after{
+  @include clearfix;
+}
+.upload-image{
+  display:none;
+}
+.dropzone-box{
+  width: 100%;
+  margin-left: 0;
+  float: right;
+  padding: 40px;
+  position: relative;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  font-size: 0;
+  text-align: center;
+  box-sizing:border-box;
+  cursor: pointer;
+  @include transition;
+}
+.dropzone-box pre {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  pointer-events: none;
+  word-wrap: break-word;
+  @include transform;
+  font-weight:600;
+  color: rgb(51, 51, 51);
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.dropzone-area2{
+  display:none;
 }
 .form-require{
   background: #ea352d;
@@ -315,19 +292,19 @@ select {
   cursor: pointer;
   text-align: center;
 }
-.sell-upload-items {
+.sell-upload-item {
   @include flex; 
   float: left;
   display: block;
 }
-.sell-upload-items ul {
+.sell-upload-item ul {
   display: block;
   width: 100%;
   list-style: none;
 }
 .sell-upload-item{
   width: 116px;
-  margin: 0 0 10px 10px;
+  margin: 0 0 5px 5px;
   position: relative;
   display: inline-block;
   border: 1px solid #eee;
@@ -348,6 +325,8 @@ select {
 .sell-upload-figure img{
   position: static;
   transform: none;
+  width: "114px";
+  height: "85px";
   top: 50%;
   left: 0;
 }
@@ -361,14 +340,18 @@ select {
   line-height: 44px;
   text-align: center;
 }
+.sell-upload-edit{
+  display: inline-block;
+  width: 47%;
+  background: #f5f5f5;
+  line-height: 44px;
+  text-align: center;
+}
 .sell-upload-button a:last-child {
   border-left: 1px solid #eee;
 }
 .list-fee-left {
-
-
   float: left;
-  
 }
 .list-fee-right{
 text-align: right;
