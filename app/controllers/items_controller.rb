@@ -28,8 +28,6 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seller_id)
   end
 
-  end
-
   def confirmation
     @personal_info = PersonalInfo.new
     render layout: 'compact'
