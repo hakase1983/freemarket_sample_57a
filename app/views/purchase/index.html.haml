@@ -27,7 +27,7 @@
                   %span
                     = "¥#{@item.price.to_s(:delimited)}"
             %p.has-error-text
-              配送先と支払い方法の入力を完了してください。
+              
             = form_tag(action: :pay, method: :post) do
               %button.confirmation-btn-default
                 購入する 
