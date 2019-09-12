@@ -20,10 +20,14 @@
       %h2.item-name 
         =@item.name
       .item-main-content.clearfix
-        .item-detail-photo
-          - @item.images.each do |img|
+        .item-photo
+          .item-detail-photo
             .owl-item-inner.is-higher-width
-              =image_tag img.name.url
+              =image_tag @item.images.first.name.url
+            .item__photo_detail
+              - @item.images.each do |img|
+                .item__photo_detail_one
+                  = image_tag img.name.url,class:"item__photo_detail_ten" 
         %table.item-detail-table
           %tbody
             %tr
