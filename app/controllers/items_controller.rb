@@ -9,6 +9,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.images.destroy_all
+    @item.images.build
     @category = ["---"]#データベースから、親カテゴリーのみ抽出し、配列化
       Category.where(ancestry: nil).pluck(:name).each do |parent|
          @category << parent
@@ -17,9 +19,13 @@ class ItemsController < ApplicationController
   end
   
   def update
-    if @item.user_id==current_user.id
-      @item.update(item_params)
+    if @item.update(item_params)
+      params[:images][:name].each do |image|
+      @item.images.create(name: image, item_id: @item.id)
+      end
       redirect_to detail_item_path(@item.id)
+    else
+      render :edit
     end
   end
 
@@ -72,7 +78,10 @@ class ItemsController < ApplicationController
     @items = Item.where(user_id: current_user.id)
   end
   def item_params
-    params.require(:item).permit(:name,:description,:category_id,:condition,:price,image_attributes: [:image1,:image2,:id],size_attributes: [:id,:name],brand_attributes: [:id,:name],delivery_attributes: [:id,:fee,:area,:delivery_days]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name,:description,:category_id,:condition,:price,images_attributes: [:name,:id],size_attributes: [:id,:name],brand_attributes: [:id,:name],delivery_attributes: [:id,:fee,:area,:delivery_days]).merge(seller_id: current_user.id)
+  end
+  def image_params
+    params.require(:item).permit(images_attributes: [:name,:id])
   end
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
