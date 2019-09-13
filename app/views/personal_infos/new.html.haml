@@ -24,7 +24,12 @@
     .main__single-container
       .main__single-container__head
         住所入力
-
+        - if @personal_info.errors.any?
+          .error-message-red
+            .alert.alert-warning
+              %ul
+                - @personal_info.errors.full_messages.each do |message|
+                  %li= message
       = form_for @personal_info do |pf|
         .single-content
           .single-content__form-group

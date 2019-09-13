@@ -13,6 +13,11 @@ module FreemarketSample57a
       g.javascripts false
       g.helper false
       g.test_framework false
+
+      config.i18n.default_locale = :ja
+      config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+        %Q(#{html_tag}).html_safe
+      end
     end
   end
 end

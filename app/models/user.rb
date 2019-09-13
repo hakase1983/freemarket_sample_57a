@@ -15,12 +15,24 @@ class User < ApplicationRecord
   
   accepts_nested_attributes_for :personal_info
 
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :family_name, presence: true
-  validates :first_name, presence: true
-  validates :family_name_kana, presence: true
-  validates :first_name, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :family_name, presence: true, format: {
+            with: /\A[一-龥ぁ-ん]/,
+            message: "は全角で入力して下さい"
+          }
+  validates :first_name, presence: true, format: {
+            with: /\A[一-龥ぁ-ん]/,
+            message: "は全角で入力して下さい"
+          }
+  validates :family_name_kana, presence: true, format: {
+            with: /\A[ァ-ヶー－]+\z/,
+            message: "は全角カタカナで入力して下さい"
+          }
+  validates :first_name_kana, presence: true, format: {
+            with: /\A[ァ-ヶー－]+\z/,
+            message: "は全角カタカナで入力して下さい"
+          }
   validates :birth_day, presence: true
 
 
