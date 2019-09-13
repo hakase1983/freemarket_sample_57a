@@ -93,7 +93,7 @@ $(function(){
     })
     if (images.length >= 5) {
       dropzone2.css({
-        'display': 'block'
+        'display': 'inline-block'
       })
       $.each(images, function(index, image) {
         image.attr('data-image', index);
@@ -110,7 +110,7 @@ $(function(){
       }
     } else {
       dropzone.css({
-        'display': 'block'
+        'display': 'inline-block'
       })
       $.each(images, function(index, image) {
         image.attr('data-image', index);

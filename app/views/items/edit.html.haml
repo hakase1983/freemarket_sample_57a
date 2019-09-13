@@ -14,7 +14,7 @@
                   必須
               %p
                 最大10枚までアップロードできます
-              = f.fields_for :images do |image|
+              = f.fields_for @image do |image|
                 .dropzone-container.clearfix
                   #preview
                   .dropzone-area
@@ -74,7 +74,7 @@
                         ブランド
                         %span.form-arbitrary
                           任意
-                        =brand.text_field :name ,class: "input-default",placeholder: "サイズを入力してください"
+                        =brand.text_field :name ,class: "input-default",placeholder: "ブランドを入力してください"
                 .form-group
                   %label
                     商品の状態

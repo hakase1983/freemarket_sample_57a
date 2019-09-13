@@ -9,21 +9,33 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item.images.destroy_all
-    @item.images.build
-    @category = ["---"]#データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).pluck(:name).each do |parent|
-         @category << parent
-      end
-    render layout: 'compact'
+    if @item.seller_id == current_user.id
+      @image = @item.images.build
+      @category = ["---"]#データベースから、親カテゴリーのみ抽出し、配列化
+        Category.where(ancestry: nil).pluck(:name).each do |parent|
+          @category << parent
+        end
+      render layout: 'compact'
+    else
+      redirect_to "/items"
+    end
   end
   
   def update
-    if @item.update(item_params)
-      params[:images][:name].each do |image|
-      @item.images.create(name: image, item_id: @item.id)
+    if params[:images][:name] != false
+      if @item.update(update_item_params)
+        @item.images.destroy_all
+        params[:images][:name].each do |image|
+        @item.images.create(name: image, item_id: @item.id)
+        end
+        if @item.images == blank?
+          render :edit
+        else
+          redirect_to detail_item_path(@item.id)
+        end
+      else
+        render :edit
       end
-      redirect_to detail_item_path(@item.id)
     else
       render :edit
     end
@@ -54,13 +66,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
-    if @item.save
-        params[:images][:name].each do |image|
-          @item.images.create(name: image, item_id: @item.id)
-        end
-      redirect_to "/items/complete"
+    if params[:images][:name] != false
+      if @item.save
+          params[:images][:name].each do |image|
+            @item.images.create(name: image, item_id: @item.id)
+          end
+        redirect_to "/items/complete"
+      else
+        @item.images.build
+        render :new
+      end
     else
-      @item.images.build
       render :new
     end
   end
@@ -72,6 +88,9 @@ class ItemsController < ApplicationController
   end
   
   def detail
+    if @item.seller_id != current_user.id
+      redirect_to "/items"
+    end
   end
 
   def sellingitem
@@ -79,6 +98,9 @@ class ItemsController < ApplicationController
   end
   def item_params
     params.require(:item).permit(:name,:description,:category_id,:condition,:price,images_attributes: [:name,:id],size_attributes: [:id,:name],brand_attributes: [:id,:name],delivery_attributes: [:id,:fee,:area,:delivery_days]).merge(seller_id: current_user.id)
+  end
+  def update_item_params
+    params.require(:item).permit(:name,:description,:category_id,:condition,:price,size_attributes: [:id,:name],brand_attributes: [:id,:name],delivery_attributes: [:id,:fee,:area,:delivery_days]).merge(seller_id: current_user.id)
   end
   def image_params
     params.require(:item).permit(images_attributes: [:name,:id])
