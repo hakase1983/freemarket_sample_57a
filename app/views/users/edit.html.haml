@@ -37,8 +37,7 @@
                 郵便番号
               %span.user-confirmation-form-arbitrary
                 任意
-              /仮置きのパスです
-              = form_for @personal_info,url: "https://www.mercari.com/jp/mypage/identification/save/" do |f|
+              = form_for @personal_info do |f|
                 = f.text_field :postal_code, placeholder: "例）1234567", class:"user-confirmation-input-default"
                 .user-confirmation-form-group
                   %label.user-confirmation-form-group__label
@@ -67,7 +66,7 @@
                   %span.user-confirmation-form-arbitrary
                     任意
                     = f.text_field :postal_code, placeholder: "例) 柳ビル103", class:"user-confirmation-input-default"
-                = f.submit "登録する" ,class:"user-confirmation-btn-default user-confirmation-btn-red"
+                = link_to "登録する",root_path ,class:"user-confirmation-btn-default user-confirmation-btn-red"
                 .user-confirmation-form-group.text-right
                   = link_to "本人情報の登録について"
                   %i.icon-arrow-right
