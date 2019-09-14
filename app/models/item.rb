@@ -5,8 +5,6 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :likes
-  has_one :seller
-  has_one :buyer
   has_one :delivery, dependent: :destroy
   has_one :dealing
   has_many :images, dependent: :destroy
