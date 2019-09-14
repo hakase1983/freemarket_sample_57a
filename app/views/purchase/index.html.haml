@@ -29,8 +29,13 @@
             %p.has-error-text
               
             = form_tag(action: :pay, method: :post) do
-              %button.confirmation-btn-default
-                購入する 
+              - if @item.buyer_id == nil && @item.seller_id != current_user.id
+                %button.confirmation-btn-default
+                  購入する 
+              - else @item.buyer_id != nil || @item.seller_id == current_user.id
+                .confirmation-btn-default
+                  売り切れor自分の商品です
+
 
       %section.buy-content.buy-user-info
         .buy-content-inner-address
