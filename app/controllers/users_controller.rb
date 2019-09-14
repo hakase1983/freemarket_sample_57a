@@ -1,25 +1,24 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!
 
   def index
   end
-
-  def new
-  end
-
-  def create
-  end
-
+  
   def edit
-    @personal_info = PersonalInfo.new
+    @user = User.find(params[:id])
+    if current_user.id == params[:id].to_i
+      @personal_info = PersonalInfo.new
+    else
+      redirect_to root_path
+    end
   end
 
   def show
-  end
-
-  def update
-  end
-
-  def destroy
+    if current_user.id == params[:id].to_i
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def logout
@@ -29,7 +28,19 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def logout
+  private
+  def user_params
+    params.require(:user).permit(
+      :family_name,
+      :first_name,
+      :family_name_kana,
+      :first_name_kana,
+      :birth_day,
+      :telephone,
+      :postal_code,
+      :prefecture_code,
+      :city_code,
+      :address_num,
+      :building_name)
   end
-
 end
