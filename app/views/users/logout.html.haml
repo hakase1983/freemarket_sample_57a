@@ -10,8 +10,3 @@
             .logout-btn-default.logout-btn-red
               =link_to "ログアウト", destroy_user_session_path, method: :delete
     = render 'layouts/l-sidebar'
-
-= link_to root_path,class: "sell-btn" do
-  %div 出品
-  %i.icon-camera
-    = icon "fas","camera"
