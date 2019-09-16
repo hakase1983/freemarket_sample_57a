@@ -6,7 +6,9 @@
         %h2.single__head
           商品の情報を入力
         .sell__form
-          =form_for(@item, data: { remote: true }) do |f|
+          =form_for @item do |f|
+            = f.fields_for @image do |image|
+              = image.hidden_field :name, multiple: true, name: 'images[name][]'
             .sell__image-box
               %h3.sell__image-head
                 出品画像

@@ -22,22 +22,19 @@ class ItemsController < ApplicationController
   end
   
   def update
-    if params[:images][:name] != false
+    if params[:images][:name] != [""]
       if @item.update(update_item_params)
         @item.images.destroy_all
         params[:images][:name].each do |image|
         @item.images.create(name: image, item_id: @item.id)
         end
-        if @item.images == blank?
-          render :edit
-        else
-          redirect_to detail_item_path(@item.id)
-        end
+        redirect_to detail_item_path(@item.id)
       else
         render :edit
       end
     else
-      render :edit
+      @item.update(update_item_params)
+      redirect_to detail_item_path(@item.id)
     end
   end
 
