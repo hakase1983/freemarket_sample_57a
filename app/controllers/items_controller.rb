@@ -22,19 +22,23 @@ class ItemsController < ApplicationController
   end
   
   def update
-    if params[:images][:name] != [""]
-      if @item.update(update_item_params)
-        @item.images.destroy_all
-        params[:images][:name].each do |image|
-        @item.images.create(name: image, item_id: @item.id)
+    if params[:item][:category_id] =~ /^[0-9]+$/
+      if params[:images][:name] != [""]
+        if @item.update(update_item_params)
+          @item.images.destroy_all
+          params[:images][:name].each do |image|
+          @item.images.create(name: image, item_id: @item.id)
+          end
+          redirect_to detail_item_path(@item.id)
+        else
+          redirect_to edit_item_path
         end
-        redirect_to detail_item_path(@item.id)
       else
-        render :edit
+        @item.update(update_item_params)
+        redirect_to detail_item_path(@item.id)
       end
     else
-      @item.update(update_item_params)
-      redirect_to detail_item_path(@item.id)
+      redirect_to edit_item_path
     end
   end
 
