@@ -24,32 +24,38 @@
     .main__single-container
       .main__single-container__head
         会員情報入力
+        - if @user.errors.any?
+          .error-message-red
+            .alert.alert-warning
+              %ul
+                - @user.errors.full_messages.each do |message|
+                  %li= message
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .single-content
           .single-content__form-group
-            = f.label :name, "ニックネーム", class: "registration-info"
+            %label ニックネーム
             %span.require
               必須
             = f.text_field :name, placeholder: '例) メルカリ太郎'
 
           .single-content__form-group
-            = f.label :email, "メールアドレス", class: "registration-info"
+            %label メールアドレス
             %span.require
               必須
             = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
 
           -if(@sns != 1)
             .single-content__form-group
-              = f.label :password, "パスワード"
+              %label パスワード
               %span.require
                 必須
-              = f.password_field :password, placeholder: '7文字以上'
+              = f.password_field :password, placeholder: '6文字以上'
 
             .single-content__form-group
-              = f.label :password_confirmation, "パスワード（確認）"
+              %label パスワード（確認)
               %span.require
                 必須
-              = f.password_field :password_confirmation, placeholder: '7文字以上'
+              = f.password_field :password_confirmation, placeholder: '6文字以上'
 
           -if true
             .single-content__form-group
@@ -75,7 +81,7 @@
                 = f.text_field :first_name_kana, placeholder: "例）アヤ",class: "input-half"
 
             .single-content__form-group
-              = f.label :birth_day, "生年月日"
+              %label 生年月日
               %span.require
                 必須
               .single-content__form-group__birthday-select

@@ -155,6 +155,10 @@
       text-align: center;
       border-bottom: 1px solid #ccc;
       font-weight: bold;
+      .error-message-red{
+        color: #ea352d;
+        font-size: 17px;
+      }
     }
     form{
       padding: 40px 40px 64px;
