@@ -19,9 +19,9 @@ class PersonalInfo < ApplicationRecord
     with: /\A[ァ-ヶー－]+\z/,
     message: "は全角カタカナで入力して下さい"
   }
-  validates :postal_code, presence: true, format: {
-    with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}\z/,
-    message: "はハイフン(-)を含む7桁の半角数値で入力してください"
+  validates :postal_code, presence: true, length: { maximum: 7 },format: {
+    with: /\A[0-9]+\z/,
+    message: "7桁の半角数値で入力してください"
   }
   validates :prefecture_code, presence: true
   validates :city_code, presence: true
