@@ -9,7 +9,7 @@ class PurchaseController < ApplicationController
       redirect_to add_cards_path and return
       
     else
-      @personal_info = PersonalInfo.find(current_user.id)
+      @personal_info = PersonalInfo.find_by(user_id: current_user.id)
       @item = Item.find(params[:item_id])
       card = Card.where(user_id: current_user.id).first
       
