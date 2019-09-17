@@ -5,6 +5,8 @@ class PurchaseController < ApplicationController
   def index
     if PersonalInfo.where(user_id: current_user.id).blank?
       redirect_to new_personal_info_path and return
+    elsif Card.where(user_id: current_user.id).blank?
+      redirect_to add_cards_path and return
       
     else
       @personal_info = PersonalInfo.find(current_user.id)
