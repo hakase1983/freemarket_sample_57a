@@ -1,5 +1,6 @@
 class PurchaseController < ApplicationController
   require 'payjp'
+  before_action :authenticate_user!
 
   def index
     if PersonalInfo.where(user_id: current_user.id).blank?
