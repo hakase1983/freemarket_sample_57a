@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   before_action :set_item,except:[:index,:new,:show,:comfirmation,:create,:sellingitem,:complete,:get_category_children,:get_category_grandchildren,:edit_get_category_children,:edit_get_category_grandchildren]
   before_action :authenticate_user!, except:[:index, :show]
   def index
-    @items = Item.includes(:user)
+    @items = Item.includes(:user).order(id:"DESC")
   end
 
   def edit
