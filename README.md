@@ -7,8 +7,13 @@
 |name|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |image|string|-------|
 |profile|text|-------|
+|birth_day|date|--------------|
 
 
 ### Association
@@ -16,7 +21,7 @@
 - has_many :comments
 - has_many :likes
 - has_many :bought_items, foreign_key: "buyer_id",class_name: "Item"
-- has_many :selling_items, -> {where("buyer_id is NULL") }, foreign_key: "seller_id",class_name: "Item"
+- has_many :selling_items, -> {where("buyer_id is NULL") },     foreign_key: "seller_id",class_name: "Item"
 - has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id",class_name: "Item"
 - has_one :personal_info
 - has_many :cards
@@ -36,7 +41,6 @@
 |address_num|string|null: false|
 |building_name|string|----------|
 |telephone|string|--------------|
-|birth_day|date|--------------|
 |user_id|references|null: false, foreign_key :true|
 ### Association
 - belongs_to :user
@@ -47,7 +51,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|image_id|references|null: false, foreign_key: true|
 |description|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
@@ -64,11 +67,9 @@
 - belongs_to :category
 - has_many :comments
 - has_many :likes
-- has_one :seller
-- has_one :buyer
 - has_one :delivery
 - has_one :dealing
-- has_one :image
+- has_many :image
 - belongs_to :saler, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 
@@ -76,22 +77,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|image1|string|null: false|
-|image2|string|-----------|
-|image3|string|-----------|
-|image4|string|-----------|
-|image5|string|-----------|
-|image6|string|-----------|
-|image7|string|-----------|
-|image8|string|-----------|
-|image9|string|-----------|
-|image10|string|----------|
+|name|string|null: false|
 |item_id|references|----------|
 
 ### Association
 - belongs_to :item
-- mount_uploader :image1, ImageUploader
-- mount_uploader :image2, ImageUploader
+- mount_uploader :name, ImageUploader
 
 ## categoriesテーブル
 
@@ -163,18 +154,6 @@
 - belongs_to :user
 - belongs_to :item
 
-
-## dealingsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|seller_id|references|null: false, foreign_key: true|
-|buyer_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :user
 
 ## cardsテーブル
 
